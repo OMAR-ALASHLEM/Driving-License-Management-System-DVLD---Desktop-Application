@@ -361,3 +361,15 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+# الـ Folder الخاص بإعدادات الفيجوال ستوديو (سبب المشكلة)
+.vs/
+
+# المجلدات التي تحتوي على الملفات التنفيذية (لا ترفع أبداً)
+[Bb]in/
+[Oo]bj/
+
+# ملفات الإعدادات الشخصية للمستخدم
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
