@@ -21,5 +21,16 @@ namespace DVLD_Presentation
         {
 
         }
+
+        private void peopleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm = new ManagePeople();
+            frm.ShowDialog();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using DVLD_DataAccess;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -91,7 +92,10 @@ namespace DVLD_Business
 
         }
 
-
+        public static DataTable GetAllPeople()
+        {
+            return clsPersonData.GetAllPeople();
+        }
 
 
 

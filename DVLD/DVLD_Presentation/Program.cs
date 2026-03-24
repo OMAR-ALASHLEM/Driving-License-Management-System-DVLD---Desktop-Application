@@ -18,7 +18,7 @@ namespace DVLD_Presentation
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
            // Application.Run(new frmtest());
-            Application.Run(new PersonDetails());
+            Application.Run(new MainForm());
         }
     }
 }
