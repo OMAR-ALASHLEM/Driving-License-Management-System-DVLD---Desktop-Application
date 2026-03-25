@@ -52,15 +52,15 @@ namespace DVLD_DataAccess
             return isFound;
         }
 
-        public static string GetCountryName(int CountryID, ref string CountryName)
+        public static string GetCountryName(int CountryID,  string CountryName)
         {
             GetCountryInfoByID(CountryID, ref CountryName)  ;
             return CountryName ;    
         }
-        public static bool GetCountryInfoByName(string CountryName, ref int CountryID)
+        public static void GetCountryInfoByName(string CountryName, ref int CountryID)
 
         {
-            bool isFound = false;
+        
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
@@ -77,8 +77,7 @@ namespace DVLD_DataAccess
 
                 if (reader.Read())
                 {
-                    isFound = true;
-
+                  
                     CountryID = (int)reader["CountryID"];
                 }
                 reader.Close();
@@ -94,7 +93,7 @@ namespace DVLD_DataAccess
                 connection.Close();
             }
 
-            return isFound;
+           
         }
 
         public static DataTable GetAllCountries()

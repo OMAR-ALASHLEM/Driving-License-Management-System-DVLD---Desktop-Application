@@ -16,16 +16,25 @@ namespace DVLD_Presentation
         {
             InitializeComponent();
         }
-        private void CloseFormWherePersonIDNotFound(int _PersonID)
+        private void CloseFormWherePersonIDNotFound()
         {
-            MessageBox.Show($"Person With ID: ({_PersonID}), Is Not Found", "Not Found");
-            this.Close();   
+          
         }
         private void frmtest_Load(object sender, EventArgs e)
         {
+          
+           
 
-            personInfo1.WherePersonIDNotFound += CloseFormWherePersonIDNotFound;
-            personInfo1.LoadPersonInfo(1);
+        }
+
+        private void addEditPersonInfo1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

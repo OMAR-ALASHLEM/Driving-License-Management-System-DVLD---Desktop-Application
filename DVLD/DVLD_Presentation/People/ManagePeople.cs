@@ -1,4 +1,5 @@
 ﻿using DVLD_Business;
+using DVLD_Presentation.People;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -119,11 +120,11 @@ namespace DVLD_Presentation
                 }
                 else
                 {
-                   
-                    _dtAllPeople.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", FilterColumn, txtFilter.Text.Trim());
+
+                    _dtAllPeople.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", FilterColumn, txtFilter.Text.Trim().Replace("'", "''"));
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
            
                 _dtAllPeople.DefaultView.RowFilter = "";
@@ -143,9 +144,57 @@ namespace DVLD_Presentation
             }
         }
 
+        private void _AddNewPerson()
+        {
+            frmAddEditPersonInfo frm = new frmAddEditPersonInfo(1);
+            frm.ShowDialog();
+            RefreshListPeople();
+        }
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("not now");
+            _AddNewPerson();
+        }
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int SelectedPersonID = (int)dvgListPeople.CurrentRow.Cells[0].Value;
+            PersonDetails frm = new PersonDetails(SelectedPersonID);
+            frm.RefreshListPeople += RefreshListPeople;
+            frm.ShowDialog();
+        }
+
+
+        private void RefreshListPeople()
+        {
+            _dtAllPeople = clsPerson.GetAllPeople();
+            _LoadData();
+        }
+        private void addNewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _AddNewPerson();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int SelectedPersonID = (int)dvgListPeople.CurrentRow.Cells[0].Value;
+            frmAddEditPersonInfo frm = new frmAddEditPersonInfo(SelectedPersonID,0);
+            frm.ShowDialog();
+
+            RefreshListPeople();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int SelectedPersonID = (int)dvgListPeople.CurrentRow.Cells[0].Value;
+            if (clsPerson.DeletePerson(SelectedPersonID))
+            {
+                MessageBox.Show("Data Deleted Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                RefreshListPeople();
+            }
+            else
+            {
+                MessageBox.Show("Error: Data Is not Deleted Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
     }

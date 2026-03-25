@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmtest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,22 +58,34 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagePeople.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagePeople.Designer.cs">
-      <DependentUpon>ManagePeople.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PersonDetails.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PersonDetails.Designer.cs">
-      <DependentUpon>PersonDetails.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PersonInfo.cs">
+    <Compile Include="People\AddEditPersonInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PersonInfo.Designer.cs">
+    <Compile Include="People\AddEditPersonInfo.Designer.cs">
+      <DependentUpon>AddEditPersonInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\frmAddEditPersonInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\frmAddEditPersonInfo.Designer.cs">
+      <DependentUpon>frmAddEditPersonInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\ManagePeople.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\ManagePeople.Designer.cs">
+      <DependentUpon>ManagePeople.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\PersonDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\PersonDetails.Designer.cs">
+      <DependentUpon>PersonDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\PersonInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="People\PersonInfo.Designer.cs">
       <DependentUpon>PersonInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -90,13 +96,19 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagePeople.resx">
+    <EmbeddedResource Include="People\AddEditPersonInfo.resx">
+      <DependentUpon>AddEditPersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\frmAddEditPersonInfo.resx">
+      <DependentUpon>frmAddEditPersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\ManagePeople.resx">
       <DependentUpon>ManagePeople.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PersonDetails.resx">
+    <EmbeddedResource Include="People\PersonDetails.resx">
       <DependentUpon>PersonDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PersonInfo.resx">
+    <EmbeddedResource Include="People\PersonInfo.resx">
       <DependentUpon>PersonInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

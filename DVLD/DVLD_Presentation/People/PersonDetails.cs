@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DVLD_Business;
+using DVLD_Presentation.People;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,16 @@ namespace DVLD_Presentation
 {
     public partial class PersonDetails : Form
     {
+        public event Action RefreshListPeople;
+        private int _PersonID;
         public PersonDetails()
         {
             InitializeComponent();
+        }
+        public PersonDetails(int PersonID)
+        {
+            InitializeComponent();
+            _PersonID=PersonID;
         }
         private void CloseFormWherePersonIDNotFound(int _PersonID)
         {
@@ -30,12 +39,16 @@ namespace DVLD_Presentation
         {
 
             personInfo1.WherePersonIDNotFound += CloseFormWherePersonIDNotFound;
-            personInfo1.LoadPersonInfo(1);
+            personInfo1.LoadPersonInfo(_PersonID);
         }
 
         private void lbEdit_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Wait");
+            frmAddEditPersonInfo frm = new frmAddEditPersonInfo(_PersonID, 0);
+            frm.ShowDialog();
+            RefreshListPeople?.Invoke();
+
+
         }
     }
 }

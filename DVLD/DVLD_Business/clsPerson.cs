@@ -16,9 +16,9 @@ namespace DVLD_Business
 
         public int PersonID { get; set; }
         public string FirstName { get; set; }
-        public string SecondtName { get; set; }
+        public string SecondName { get; set; }
         public string ThirdName { get; set; }
-        public string LasttName { get; set; }
+        public string LastName { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
         public string CountryName { get; set; }
@@ -26,25 +26,25 @@ namespace DVLD_Business
         public string NationalNo { get; set; }
         public string ImagePath { get; set; }
         public byte Gendor { get; set; }
-        public int NationalCountryID { get; set; }
+        public int NationalityCountryID { get; set; }
      
         public DateTime DateOfBirth { get; set; }
         public string FullName()
         { 
 
-            return FirstName+" "+SecondtName+" "+ThirdName+" "+LasttName;
+            return FirstName+" "+SecondName+" "+ThirdName+" "+LastName;
         }
         public clsPerson()
         {
             this.PersonID = 0;
             this.Gendor = 0;
            
-            this.NationalCountryID = 0;
+            this.NationalityCountryID = 0;
             this.DateOfBirth = DateTime.Now;
             this.FirstName = "";
-            this.SecondtName = "";
+            this.SecondName = "";
             this.ThirdName = "";
-            this.LasttName = "";
+            this.LastName = "";
             this.Email = "";
             this.Phone = "";
             this.Address = "";
@@ -60,12 +60,12 @@ namespace DVLD_Business
                         {
             this.PersonID = PersonID;
             this.Gendor = Gendor;
-            this.NationalCountryID = NationalCountryID;
+            this.NationalityCountryID = NationalCountryID;
             this.DateOfBirth = DateOfBirth;
             this.FirstName = FirstName;
-            this.SecondtName = SecondName;
+            this.SecondName = SecondName;
             this.ThirdName = ThirdName;
-            this.LasttName = LastName;
+            this.LastName = LastName;
             this.Email = Email;
             this.Phone = Phone;
             this.Address = Address;
@@ -82,7 +82,7 @@ namespace DVLD_Business
             DateTime DateOfBirth = DateTime.Now;
             if (clsPersonData.GetPersonByID(PersonID, ref NationalNO, ref FirstName, ref SecondName, ref ThirdName, ref LastName, ref DateOfBirth, ref Gendor, ref Address, ref Phone, ref Email, ref NationalCountryID, ref ImagePath))
             {
-                return new clsPerson(PersonID,  NationalNO,  FirstName,  SecondName,  ThirdName,  LastName,  DateOfBirth,  Gendor,  Address,  Phone,  Email,  NationalCountryID,ImagePath,  clsCountriesData.GetCountryName(NationalCountryID,ref CountryName));
+                return new clsPerson(PersonID,  NationalNO,  FirstName,  SecondName,  ThirdName,  LastName,  DateOfBirth,  Gendor,  Address,  Phone,  Email,  NationalCountryID,ImagePath, clsCountriesData.GetCountryName(NationalCountryID, CountryName));
 
             }
             else
@@ -97,7 +97,55 @@ namespace DVLD_Business
             return clsPersonData.GetAllPeople();
         }
 
+        public static bool IsExist(string NationalNo)
+        {
+            return clsPersonData.IsPersonExist(NationalNo);
+        }
 
+        private bool _AddNewPerson()
+        {
+            this.PersonID = clsPersonData.AddNewPerson(
+                this.FirstName, this.SecondName, this.ThirdName, this.LastName,
+                this.NationalNo, this.DateOfBirth, this.Gendor, this.Address,
+                this.Phone, this.Email, this.NationalityCountryID, this.ImagePath);
+
+            return (this.PersonID != -1);
+        }
+
+        private bool _UpdatePerson()
+        {
+            return clsPersonData.UpdatePerson(
+                this.PersonID, this.FirstName, this.SecondName, this.ThirdName,
+                this.LastName, this.NationalNo, this.DateOfBirth, this.Gendor,
+                this.Address, this.Phone, this.Email, this.NationalityCountryID, this.ImagePath);
+        }
+
+        public bool Save()
+        {
+            switch (Mode)
+            {
+                case enMode.AddNew:
+                    if (_AddNewPerson())
+                    {
+                        Mode = enMode.Update;
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+                case enMode.Update:
+                    return _UpdatePerson();
+
+                default:
+                    return false;
+            }
+        }
+        public static bool DeletePerson(int PersonID)
+        {
+            return clsPersonData.DeletePerson(PersonID);
+        }
 
     }
 }
