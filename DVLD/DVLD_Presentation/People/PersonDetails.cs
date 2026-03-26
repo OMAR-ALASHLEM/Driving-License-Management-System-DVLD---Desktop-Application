@@ -14,7 +14,7 @@ namespace DVLD_Presentation
 {
     public partial class PersonDetails : Form
     {
-        public event Action RefreshListPeople;
+ 
         private int _PersonID;
         public PersonDetails()
         {
@@ -23,8 +23,19 @@ namespace DVLD_Presentation
         public PersonDetails(int PersonID)
         {
             InitializeComponent();
+
             _PersonID=PersonID;
+            personInfo1.WherePersonIDNotFound += CloseFormWherePersonIDNotFound;
+            personInfo1.LoadPersonInfo(_PersonID);
         }
+        public PersonDetails(string NationalNo)
+        {
+            InitializeComponent();
+            personInfo1.WherePersonIDNotFound += CloseFormWherePersonIDNotFound;
+            personInfo1.LoadPersonInfo(NationalNo);
+
+        }
+
         private void CloseFormWherePersonIDNotFound(int _PersonID)
         {
             MessageBox.Show($"Person With ID: ({_PersonID}), Is Not Found", "Not Found");
@@ -34,21 +45,17 @@ namespace DVLD_Presentation
         {
             this.Close();   
         }
-
+        
         private void PersonDetails_Load(object sender, EventArgs e)
         {
 
-            personInfo1.WherePersonIDNotFound += CloseFormWherePersonIDNotFound;
-            personInfo1.LoadPersonInfo(_PersonID);
+       
         }
-
-        private void lbEdit_Click(object sender, EventArgs e)
+        public void PersonInfoEdit()
         {
-            frmAddEditPersonInfo frm = new frmAddEditPersonInfo(_PersonID, 0);
-            frm.ShowDialog();
-            RefreshListPeople?.Invoke();
-
-
+           
         }
+
+   
     }
 }

@@ -55,8 +55,6 @@ namespace DVLD_Presentation
             }
         }
 
-     
-      
         private void txtFilter_TextChanged(object sender, EventArgs e)
         {
            
@@ -146,7 +144,7 @@ namespace DVLD_Presentation
 
         private void _AddNewPerson()
         {
-            frmAddEditPersonInfo frm = new frmAddEditPersonInfo(1);
+            frmAddEditPersonInfo frm = new frmAddEditPersonInfo();
             frm.ShowDialog();
             RefreshListPeople();
         }
@@ -159,7 +157,6 @@ namespace DVLD_Presentation
         {
             int SelectedPersonID = (int)dvgListPeople.CurrentRow.Cells[0].Value;
             PersonDetails frm = new PersonDetails(SelectedPersonID);
-            frm.RefreshListPeople += RefreshListPeople;
             frm.ShowDialog();
         }
 
@@ -177,7 +174,7 @@ namespace DVLD_Presentation
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int SelectedPersonID = (int)dvgListPeople.CurrentRow.Cells[0].Value;
-            frmAddEditPersonInfo frm = new frmAddEditPersonInfo(SelectedPersonID,0);
+            frmAddEditPersonInfo frm = new frmAddEditPersonInfo(SelectedPersonID);
             frm.ShowDialog();
 
             RefreshListPeople();
@@ -186,9 +183,14 @@ namespace DVLD_Presentation
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int SelectedPersonID = (int)dvgListPeople.CurrentRow.Cells[0].Value;
+        
+            clsPerson _Person = clsPerson.Find(SelectedPersonID);
             if (clsPerson.DeletePerson(SelectedPersonID))
             {
                 MessageBox.Show("Data Deleted Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                if (_Person.ImagePath != "")
+                    System.IO.File.Delete(_Person.ImagePath);
                 RefreshListPeople();
             }
             else

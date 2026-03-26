@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Global Classes\clsUtil.cs" />
     <Compile Include="frmtest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,17 +59,23 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="People\AddEditPersonInfo.cs">
+    <Compile Include="People\Controls\ctrlPersonInfoWithFilter.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="People\AddEditPersonInfo.Designer.cs">
-      <DependentUpon>AddEditPersonInfo.cs</DependentUpon>
+    <Compile Include="People\Controls\ctrlPersonInfoWithFilter.Designer.cs">
+      <DependentUpon>ctrlPersonInfoWithFilter.cs</DependentUpon>
     </Compile>
     <Compile Include="People\frmAddEditPersonInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="People\frmAddEditPersonInfo.Designer.cs">
       <DependentUpon>frmAddEditPersonInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\frmFindPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\frmFindPerson.Designer.cs">
+      <DependentUpon>frmFindPerson.cs</DependentUpon>
     </Compile>
     <Compile Include="People\ManagePeople.cs">
       <SubType>Form</SubType>
@@ -82,10 +89,10 @@
     <Compile Include="People\PersonDetails.Designer.cs">
       <DependentUpon>PersonDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="People\PersonInfo.cs">
+    <Compile Include="People\Controls\PersonInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="People\PersonInfo.Designer.cs">
+    <Compile Include="People\Controls\PersonInfo.Designer.cs">
       <DependentUpon>PersonInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -96,11 +103,14 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="People\AddEditPersonInfo.resx">
-      <DependentUpon>AddEditPersonInfo.cs</DependentUpon>
+    <EmbeddedResource Include="People\Controls\ctrlPersonInfoWithFilter.resx">
+      <DependentUpon>ctrlPersonInfoWithFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="People\frmAddEditPersonInfo.resx">
       <DependentUpon>frmAddEditPersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\frmFindPerson.resx">
+      <DependentUpon>frmFindPerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="People\ManagePeople.resx">
       <DependentUpon>ManagePeople.cs</DependentUpon>
@@ -108,7 +118,7 @@
     <EmbeddedResource Include="People\PersonDetails.resx">
       <DependentUpon>PersonDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="People\PersonInfo.resx">
+    <EmbeddedResource Include="People\Controls\PersonInfo.resx">
       <DependentUpon>PersonInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

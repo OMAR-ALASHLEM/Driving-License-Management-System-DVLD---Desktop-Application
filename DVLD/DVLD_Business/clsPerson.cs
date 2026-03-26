@@ -82,7 +82,7 @@ namespace DVLD_Business
             DateTime DateOfBirth = DateTime.Now;
             if (clsPersonData.GetPersonByID(PersonID, ref NationalNO, ref FirstName, ref SecondName, ref ThirdName, ref LastName, ref DateOfBirth, ref Gendor, ref Address, ref Phone, ref Email, ref NationalCountryID, ref ImagePath))
             {
-                return new clsPerson(PersonID,  NationalNO,  FirstName,  SecondName,  ThirdName,  LastName,  DateOfBirth,  Gendor,  Address,  Phone,  Email,  NationalCountryID,ImagePath, clsCountriesData.GetCountryName(NationalCountryID, CountryName));
+                return new clsPerson(PersonID,  NationalNO,  FirstName,  SecondName,  ThirdName,  LastName,  DateOfBirth,  Gendor,  Address,  Phone,  Email,  NationalCountryID,ImagePath, clsCountries.GetCountryName(NationalCountryID));
 
             }
             else
@@ -91,7 +91,28 @@ namespace DVLD_Business
             }
 
         }
+        public static clsPerson Find(string NationalNo)
+        {
+            string FirstName = "", SecondName = "", ThirdName = "", LastName = "", Email = "", Phone = "", Address = "", ImagePath = "";
+            DateTime DateOfBirth = DateTime.Now;
+            int PersonID = -1, NationalityCountryID = -1;
+            byte Gendor = 0;
 
+            bool IsFound = clsPersonData.GetPersonInfoByNationalNo
+                                (
+                                    NationalNo, ref PersonID, ref FirstName, ref SecondName,
+                                    ref ThirdName, ref LastName, ref DateOfBirth,
+                                    ref Gendor, ref Address, ref Phone, ref Email,
+                                    ref NationalityCountryID, ref ImagePath
+                                );
+
+            if (IsFound)
+
+                return new clsPerson(PersonID, FirstName, SecondName, ThirdName, LastName,
+                          NationalNo, DateOfBirth, Gendor, Address, Phone, Email, NationalityCountryID, ImagePath, clsCountries.GetCountryName(NationalityCountryID));
+            else
+                return null;
+        }
         public static DataTable GetAllPeople()
         {
             return clsPersonData.GetAllPeople();

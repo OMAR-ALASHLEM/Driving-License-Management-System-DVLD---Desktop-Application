@@ -48,13 +48,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.lbEdit = new System.Windows.Forms.Label();
             this.gbPersonInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPicturePerson)).BeginInit();
             this.SuspendLayout();
             // 
             // gbPersonInformation
             // 
+            this.gbPersonInformation.Controls.Add(this.lbEdit);
             this.gbPersonInformation.Controls.Add(this.pbxPicturePerson);
             this.gbPersonInformation.Controls.Add(this.lbCountry);
             this.gbPersonInformation.Controls.Add(this.lbPhone);
@@ -267,9 +268,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Person ID :";
             // 
-            // openFileDialog1
+            // lbEdit
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.lbEdit.AutoSize = true;
+            this.lbEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbEdit.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEdit.ForeColor = System.Drawing.Color.MediumBlue;
+            this.lbEdit.Location = new System.Drawing.Point(818, 56);
+            this.lbEdit.Name = "lbEdit";
+            this.lbEdit.Size = new System.Drawing.Size(163, 25);
+            this.lbEdit.TabIndex = 26;
+            this.lbEdit.Text = "Edit Person Info";
+            this.lbEdit.Click += new System.EventHandler(this.lbEdit_Click);
             // 
             // PersonInfo
             // 
@@ -307,7 +318,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pbxPicturePerson;
+        private System.Windows.Forms.Label lbEdit;
     }
 }

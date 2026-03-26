@@ -30,7 +30,6 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbEdit = new System.Windows.Forms.Label();
             this.personInfo1 = new DVLD_Presentation.PersonInfo();
             this.SuspendLayout();
             // 
@@ -58,20 +57,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Person Details";
             // 
-            // lbEdit
-            // 
-            this.lbEdit.AutoSize = true;
-            this.lbEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbEdit.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEdit.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lbEdit.Location = new System.Drawing.Point(890, 137);
-            this.lbEdit.Name = "lbEdit";
-            this.lbEdit.Size = new System.Drawing.Size(163, 25);
-            this.lbEdit.TabIndex = 3;
-            this.lbEdit.Text = "Edit Person Info";
-            this.lbEdit.Click += new System.EventHandler(this.lbEdit_Click);
-            // 
             // personInfo1
             // 
             this.personInfo1.Location = new System.Drawing.Point(29, 78);
@@ -84,7 +69,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1157, 540);
-            this.Controls.Add(this.lbEdit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.personInfo1);
@@ -101,6 +85,5 @@
         private PersonInfo personInfo1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbEdit;
     }
 }

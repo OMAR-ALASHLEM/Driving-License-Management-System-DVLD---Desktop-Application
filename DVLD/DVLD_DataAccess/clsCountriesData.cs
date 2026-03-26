@@ -52,8 +52,9 @@ namespace DVLD_DataAccess
             return isFound;
         }
 
-        public static string GetCountryName(int CountryID,  string CountryName)
+        public static string GetCountryName(int CountryID )
         {
+            string CountryName="";
             GetCountryInfoByID(CountryID, ref CountryName)  ;
             return CountryName ;    
         }

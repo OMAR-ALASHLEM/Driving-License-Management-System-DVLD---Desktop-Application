@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
+            this.ctrlPersonInfoWithFilter1 = new DVLD_Presentation.People.Controls.ctrlPersonInfoWithFilter();
             this.SuspendLayout();
             // 
             // button1
@@ -45,11 +46,21 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // ctrlPersonInfoWithFilter1
+            // 
+            this.ctrlPersonInfoWithFilter1.FilterEnabled = true;
+            this.ctrlPersonInfoWithFilter1.Location = new System.Drawing.Point(16, 18);
+            this.ctrlPersonInfoWithFilter1.Name = "ctrlPersonInfoWithFilter1";
+            this.ctrlPersonInfoWithFilter1.ShowAddPerson = true;
+            this.ctrlPersonInfoWithFilter1.Size = new System.Drawing.Size(1264, 514);
+            this.ctrlPersonInfoWithFilter1.TabIndex = 38;
+            // 
             // frmtest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1318, 673);
+            this.Controls.Add(this.ctrlPersonInfoWithFilter1);
             this.Controls.Add(this.button1);
             this.Name = "frmtest";
             this.Text = "frmtest";
@@ -60,5 +71,6 @@
 
         #endregion
         private System.Windows.Forms.Button button1;
+        private People.Controls.ctrlPersonInfoWithFilter ctrlPersonInfoWithFilter1;
     }
 }

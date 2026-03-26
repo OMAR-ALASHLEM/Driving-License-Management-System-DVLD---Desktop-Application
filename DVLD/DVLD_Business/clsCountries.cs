@@ -24,7 +24,7 @@ namespace DVLD_Business
         public static string GetCountryName(int ID, string CountryName="") 
         {
 
-            return clsCountriesData.GetCountryName(ID, CountryName);
+            return clsCountriesData.GetCountryName(ID);
         
         }
         public static int GetCountryIDByName(string CountryName)

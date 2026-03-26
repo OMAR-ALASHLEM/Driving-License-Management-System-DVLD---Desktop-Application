@@ -129,8 +129,11 @@
             this.ClientSize = new System.Drawing.Size(1659, 850);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pnlSidebar);
+            this.IsMdiContainer = true;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.pnlSidebar.ResumeLayout(false);
             this.pnlSidebar.PerformLayout();
