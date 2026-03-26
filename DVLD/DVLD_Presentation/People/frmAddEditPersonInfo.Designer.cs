@@ -69,67 +69,73 @@
             // 
             // lbPersonID
             // 
-            this.lbPersonID.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPersonID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPersonID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43))))); // لون أحمر هادئ للـ ID
             this.lbPersonID.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lbPersonID.Location = new System.Drawing.Point(228, 148);
             this.lbPersonID.Name = "lbPersonID";
-            this.lbPersonID.Size = new System.Drawing.Size(65, 23);
+            this.lbPersonID.Size = new System.Drawing.Size(65, 25);
             this.lbPersonID.TabIndex = 65;
             this.lbPersonID.Text = "N/A";
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.Navy;
-            this.lblTitle.Location = new System.Drawing.Point(477, 100);
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.lblTitle.Location = new System.Drawing.Point(372, 60);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(84, 42);
+            this.lblTitle.Size = new System.Drawing.Size(306, 50);
             this.lblTitle.TabIndex = 63;
-            this.lblTitle.Text = "???";
+            this.lblTitle.Text = "Add New Person";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Gray;
             this.label12.Location = new System.Drawing.Point(900, 189);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(40, 20);
+            this.label12.Size = new System.Drawing.Size(35, 20);
             this.label12.TabIndex = 62;
             this.label12.Text = "Last";
             // 
             // cbCountries
             // 
+            this.cbCountries.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCountries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbCountries.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.cbCountries.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.cbCountries.FormattingEnabled = true;
             this.cbCountries.Location = new System.Drawing.Point(651, 371);
             this.cbCountries.Name = "cbCountries";
-            this.cbCountries.Size = new System.Drawing.Size(161, 26);
+            this.cbCountries.Size = new System.Drawing.Size(161, 28);
             this.cbCountries.TabIndex = 61;
             // 
             // dtpDateOfBirth
             // 
-            this.dtpDateOfBirth.CalendarFont = new System.Drawing.Font("Tahoma", 11F);
-            this.dtpDateOfBirth.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.dtpDateOfBirth.CalendarFont = new System.Drawing.Font("Segoe UI", 11F);
+            this.dtpDateOfBirth.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.dtpDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDateOfBirth.Location = new System.Drawing.Point(651, 273);
             this.dtpDateOfBirth.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
-            this.dtpDateOfBirth.Size = new System.Drawing.Size(162, 25);
+            this.dtpDateOfBirth.Size = new System.Drawing.Size(162, 27);
             this.dtpDateOfBirth.TabIndex = 60;
             this.dtpDateOfBirth.Value = new System.DateTime(2026, 3, 25, 10, 47, 47, 0);
             // 
             // txtPhone
             // 
+            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.Location = new System.Drawing.Point(651, 317);
-            this.txtPhone.Multiline = true;
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(162, 24);
+            this.txtPhone.Size = new System.Drawing.Size(162, 27);
             this.txtPhone.TabIndex = 59;
             // 
             // txtAddress
             // 
+            this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.Location = new System.Drawing.Point(232, 414);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
@@ -138,17 +144,19 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(232, 368);
-            this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(162, 24);
+            this.txtEmail.Size = new System.Drawing.Size(162, 27);
             this.txtEmail.TabIndex = 57;
             this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // rdFemale
             // 
+            this.rdFemale.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rdFemale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdFemale.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdFemale.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdFemale.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdFemale.Location = new System.Drawing.Point(339, 316);
             this.rdFemale.Name = "rdFemale";
@@ -160,75 +168,83 @@
             // 
             // txtNationalNo
             // 
+            this.txtNationalNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNationalNo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNationalNo.Location = new System.Drawing.Point(232, 270);
-            this.txtNationalNo.Multiline = true;
             this.txtNationalNo.Name = "txtNationalNo";
-            this.txtNationalNo.Size = new System.Drawing.Size(162, 24);
+            this.txtNationalNo.Size = new System.Drawing.Size(162, 27);
             this.txtNationalNo.TabIndex = 54;
             this.txtNationalNo.Validating += new System.ComponentModel.CancelEventHandler(this.txtNationalNo_Validating);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Gray;
             this.label11.Location = new System.Drawing.Point(695, 189);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(44, 20);
+            this.label11.Size = new System.Drawing.Size(43, 20);
             this.label11.TabIndex = 53;
             this.label11.Text = "Third";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Gray;
             this.label10.Location = new System.Drawing.Point(476, 189);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 20);
+            this.label10.Size = new System.Drawing.Size(58, 20);
             this.label10.TabIndex = 52;
             this.label10.Text = "Second";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gray;
             this.label1.Location = new System.Drawing.Point(301, 189);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 20);
+            this.label1.Size = new System.Drawing.Size(36, 20);
             this.label1.TabIndex = 51;
             this.label1.Text = "First";
             // 
             // txtLastName
             // 
+            this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLastName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.Location = new System.Drawing.Point(841, 221);
-            this.txtLastName.Multiline = true;
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(162, 24);
+            this.txtLastName.Size = new System.Drawing.Size(162, 27);
             this.txtLastName.TabIndex = 50;
             this.txtLastName.Validating += new System.ComponentModel.CancelEventHandler(this.txtLastName_Validating);
             // 
             // txtThirdName
             // 
+            this.txtThirdName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtThirdName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtThirdName.Location = new System.Drawing.Point(638, 221);
-            this.txtThirdName.Multiline = true;
             this.txtThirdName.Name = "txtThirdName";
-            this.txtThirdName.Size = new System.Drawing.Size(162, 24);
+            this.txtThirdName.Size = new System.Drawing.Size(162, 27);
             this.txtThirdName.TabIndex = 49;
             // 
             // txtSecondName
             // 
+            this.txtSecondName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSecondName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSecondName.Location = new System.Drawing.Point(435, 221);
-            this.txtSecondName.Multiline = true;
             this.txtSecondName.Name = "txtSecondName";
-            this.txtSecondName.Size = new System.Drawing.Size(162, 24);
+            this.txtSecondName.Size = new System.Drawing.Size(162, 27);
             this.txtSecondName.TabIndex = 48;
             this.txtSecondName.Validating += new System.ComponentModel.CancelEventHandler(this.txtSecondName_Validating);
             // 
             // txtFirstName
             // 
+            this.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFirstName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstName.Location = new System.Drawing.Point(232, 221);
-            this.txtFirstName.Multiline = true;
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(162, 24);
+            this.txtFirstName.Size = new System.Drawing.Size(162, 27);
             this.txtFirstName.TabIndex = 47;
             this.txtFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.txtFirstName_Validating);
             // 
@@ -238,8 +254,9 @@
             // 
             // lbSetImage
             // 
-            this.lbSetImage.Font = new System.Drawing.Font("Tahoma", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSetImage.ForeColor = System.Drawing.Color.Blue;
+            this.lbSetImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbSetImage.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSetImage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.lbSetImage.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lbSetImage.Location = new System.Drawing.Point(861, 468);
             this.lbSetImage.Name = "lbSetImage";
@@ -250,8 +267,9 @@
             // 
             // lbRemoveImage
             // 
-            this.lbRemoveImage.Font = new System.Drawing.Font("Tahoma", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRemoveImage.ForeColor = System.Drawing.Color.Blue;
+            this.lbRemoveImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbRemoveImage.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRemoveImage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60))))); // أحمر للحذف
             this.lbRemoveImage.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lbRemoveImage.Location = new System.Drawing.Point(874, 506);
             this.lbRemoveImage.Name = "lbRemoveImage";
@@ -262,31 +280,39 @@
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219))))); // أزرق عصري
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = global::DVLD_Presentation.Properties.Resources.Save_32;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.Location = new System.Drawing.Point(648, 553);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(164, 47);
             this.btnSave.TabIndex = 67;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Text = "   Save";
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
+            this.btnClose.BackColor = System.Drawing.Color.White;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.btnClose.Image = global::DVLD_Presentation.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(474, 553);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(154, 47);
             this.btnClose.TabIndex = 38;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Text = "   Close";
+            this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.button1_Click);
             // 
             // pbPersonImage
@@ -301,21 +327,22 @@
             // 
             // label13
             // 
-            this.label13.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Image = global::DVLD_Presentation.Properties.Resources.Number_32;
             this.label13.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label13.Location = new System.Drawing.Point(16, 148);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(199, 23);
+            this.label13.Size = new System.Drawing.Size(199, 25);
             this.label13.TabIndex = 64;
             this.label13.Text = "Person ID :";
             // 
             // rdMale
             // 
             this.rdMale.Checked = true;
+            this.rdMale.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rdMale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdMale.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdMale.Image = global::DVLD_Presentation.Properties.Resources.Woman_32;
+            this.rdMale.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdMale.Image = global::DVLD_Presentation.Properties.Resources.Woman_32; // تأكد من اسم الصورة لديك (يبدو أن هنا صورة Woman مع زر Male في كودك الأصلي!)
             this.rdMale.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdMale.Location = new System.Drawing.Point(232, 320);
             this.rdMale.Name = "rdMale";
@@ -328,18 +355,18 @@
             // 
             // label8
             // 
-            this.label8.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Image = global::DVLD_Presentation.Properties.Resources.Phone_32;
             this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label8.Location = new System.Drawing.Point(505, 318);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(140, 23);
+            this.label8.Size = new System.Drawing.Size(140, 25);
             this.label8.TabIndex = 46;
             this.label8.Text = "Phone :";
             // 
             // label9
             // 
-            this.label9.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Image = global::DVLD_Presentation.Properties.Resources.Country_32;
             this.label9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label9.Location = new System.Drawing.Point(487, 368);
@@ -350,18 +377,18 @@
             // 
             // label7
             // 
-            this.label7.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Image = global::DVLD_Presentation.Properties.Resources.Calendar_32;
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label7.Location = new System.Drawing.Point(440, 271);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(205, 23);
+            this.label7.Size = new System.Drawing.Size(205, 25);
             this.label7.TabIndex = 44;
             this.label7.Text = "Date Of Birth :";
             // 
             // label6
             // 
-            this.label6.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Image = global::DVLD_Presentation.Properties.Resources.Address_32;
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label6.Location = new System.Drawing.Point(16, 414);
@@ -372,45 +399,45 @@
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Image = global::DVLD_Presentation.Properties.Resources.Email_32;
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label5.Location = new System.Drawing.Point(16, 368);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(199, 23);
+            this.label5.Size = new System.Drawing.Size(199, 25);
             this.label5.TabIndex = 42;
             this.label5.Text = "Email : ";
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Image = global::DVLD_Presentation.Properties.Resources.Man_32;
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label4.Location = new System.Drawing.Point(16, 323);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(199, 23);
+            this.label4.Size = new System.Drawing.Size(199, 25);
             this.label4.TabIndex = 41;
             this.label4.Text = "Gendor : ";
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Image = global::DVLD_Presentation.Properties.Resources.Number_32;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label3.Location = new System.Drawing.Point(16, 272);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(199, 23);
+            this.label3.Size = new System.Drawing.Size(199, 25);
             this.label3.TabIndex = 40;
             this.label3.Text = "National No : ";
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Image = global::DVLD_Presentation.Properties.Resources.Person_32;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label2.Location = new System.Drawing.Point(16, 222);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(199, 23);
+            this.label2.Size = new System.Drawing.Size(199, 25);
             this.label2.TabIndex = 39;
             this.label2.Text = " Name : ";
             // 
@@ -419,6 +446,7 @@
             this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(1099, 659);
             this.Controls.Add(this.lbRemoveImage);
@@ -453,8 +481,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnClose);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmAddEditPersonInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add / Edit Person Info";
             this.Load += new System.EventHandler(this.frmAddEditPersonInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

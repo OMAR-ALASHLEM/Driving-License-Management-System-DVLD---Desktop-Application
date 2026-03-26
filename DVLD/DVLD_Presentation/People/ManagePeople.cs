@@ -28,16 +28,19 @@ namespace DVLD_Presentation
         {
             dvgListPeople.DataSource = _dtAllPeople.DefaultView;
             cmbFilters.SelectedIndex = 0;
-            lbRecords.Text=dvgListPeople.Rows.Count.ToString();
-            dvgListPeople.Columns["PersonID"].HeaderText = "Person ID";
-            dvgListPeople.Columns["FirstName"].HeaderText = "First Name";
-            dvgListPeople.Columns["SecondName"].HeaderText = "Second Name";
-            dvgListPeople.Columns["ThirdName"].HeaderText = "Third Name";
-            dvgListPeople.Columns["LastName"].HeaderText = "Last Name";
-            dvgListPeople.Columns["NationalNo"].HeaderText = "National No";
-            dvgListPeople.Columns["DateOfBirth"].HeaderText = "Date Of Birth";
-            dvgListPeople.Columns["CountryName"].HeaderText = "Nationality";
-           
+            lbRecords.Text = dvgListPeople.Rows.Count.ToString();
+            if (dvgListPeople.Rows.Count > 0)
+            {
+                dvgListPeople.Columns["PersonID"].HeaderText = "Person ID";
+                dvgListPeople.Columns["FirstName"].HeaderText = "First Name";
+                dvgListPeople.Columns["SecondName"].HeaderText = "Second Name";
+                dvgListPeople.Columns["ThirdName"].HeaderText = "Third Name";
+                dvgListPeople.Columns["LastName"].HeaderText = "Last Name";
+                dvgListPeople.Columns["NationalNo"].HeaderText = "National No";
+                dvgListPeople.Columns["DateOfBirth"].HeaderText = "Date Of Birth";
+                dvgListPeople.Columns["CountryName"].HeaderText = "Nationality";
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,13 +60,13 @@ namespace DVLD_Presentation
 
         private void txtFilter_TextChanged(object sender, EventArgs e)
         {
-           
+
             if (_dtAllPeople == null || _dtAllPeople.Rows.Count == 0)
                 return;
 
             string FilterColumn = "";
 
-         
+
             switch (cmbFilters.Text)
             {
                 case "Person ID":
@@ -113,7 +116,7 @@ namespace DVLD_Presentation
             {
                 if (FilterColumn == "PersonID")
                 {
-             
+
                     _dtAllPeople.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, txtFilter.Text.Trim());
                 }
                 else
@@ -122,9 +125,9 @@ namespace DVLD_Presentation
                     _dtAllPeople.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", FilterColumn, txtFilter.Text.Trim().Replace("'", "''"));
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
-           
+
                 _dtAllPeople.DefaultView.RowFilter = "";
             }
 
@@ -134,7 +137,7 @@ namespace DVLD_Presentation
         private void txtFilter_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (cmbFilters.Text == "Person ID")
-            { 
+            {
                 if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
                 {
                     e.Handled = true;
@@ -183,7 +186,7 @@ namespace DVLD_Presentation
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int SelectedPersonID = (int)dvgListPeople.CurrentRow.Cells[0].Value;
-        
+
             clsPerson _Person = clsPerson.Find(SelectedPersonID);
             if (clsPerson.DeletePerson(SelectedPersonID))
             {
@@ -199,5 +202,5 @@ namespace DVLD_Presentation
             }
         }
     }
-    }
+}
 

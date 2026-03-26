@@ -35,8 +35,10 @@
             // 
             // ctrlPersonInfoWithFilter1
             // 
+            this.ctrlPersonInfoWithFilter1.BackColor = System.Drawing.Color.White;
             this.ctrlPersonInfoWithFilter1.FilterEnabled = true;
-            this.ctrlPersonInfoWithFilter1.Location = new System.Drawing.Point(44, 115);
+            this.ctrlPersonInfoWithFilter1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrlPersonInfoWithFilter1.Location = new System.Drawing.Point(44, 100);
             this.ctrlPersonInfoWithFilter1.Name = "ctrlPersonInfoWithFilter1";
             this.ctrlPersonInfoWithFilter1.ShowAddPerson = true;
             this.ctrlPersonInfoWithFilter1.Size = new System.Drawing.Size(1063, 471);
@@ -45,42 +47,49 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.Navy;
-            this.lblTitle.Location = new System.Drawing.Point(440, 24);
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80))))); // Slate Dark Color
+            this.lblTitle.Location = new System.Drawing.Point(463, 25);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(231, 42);
+            this.lblTitle.Size = new System.Drawing.Size(225, 50);
             this.lblTitle.TabIndex = 64;
             this.lblTitle.Text = "Find Person";
             // 
             // btnClose
             // 
+            this.btnClose.BackColor = System.Drawing.Color.White;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.btnClose.Image = global::DVLD_Presentation.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(908, 592);
+            this.btnClose.Location = new System.Drawing.Point(953, 582);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(154, 47);
             this.btnClose.TabIndex = 65;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Text = "   Close";
+            this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmFindPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(1151, 651);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.ctrlPersonInfoWithFilter1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog; // تغيير من ToolWindow لشكل أرقى
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmFindPerson";
-            this.Text = "frmFindPerson";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Find Person";
             this.Load += new System.EventHandler(this.frmFindPerson_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
