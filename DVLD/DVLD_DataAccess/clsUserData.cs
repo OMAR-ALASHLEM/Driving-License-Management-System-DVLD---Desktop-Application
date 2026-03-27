@@ -44,13 +44,65 @@ namespace DVLD_DataAccess
             }
             return isFound;
         }
-        public static bool GetUserByUsername(string Username,ref int User_ID, ref int Person_ID ,ref string Password, ref bool IsActive)
+
+        public static bool GetUserInfoByPersonID(int PersonID, ref int UserID, ref string UserName,
+        ref string Password, ref bool IsActive)
+        {
+            bool isFound = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = "SELECT * FROM Users WHERE Person_ID = @PersonID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@PersonID", PersonID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+
+                    isFound = true;
+
+                    UserID = (int)reader["User_ID"];
+                    UserName = (string)reader["Username"];
+                    Password = (string)reader["Password"];
+                    IsActive = (bool)reader["IsActive"];
+
+
+                }
+                else
+                {
+
+                    isFound = false;
+                }
+
+                reader.Close();
+
+            }
+            catch 
+            {
+                isFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+        }
+        public static bool GetUserByUsernameAndPassword(string Username, string Password, ref int User_ID, ref int Person_ID, ref bool IsActive)
         {
             bool isFound = false;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "SELECT * FROM Users WHERE Username = @Username";
+            string query = "SELECT * FROM Users WHERE Username = @Username and Password=@Password ";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@Username", Username);
+            command.Parameters.AddWithValue("@Password", Password);
             try
             {
                 connection.Open();
@@ -66,7 +118,7 @@ namespace DVLD_DataAccess
                 }
                 reader.Close();
             }
-            catch 
+            catch
             { }
             finally
             {
@@ -167,7 +219,7 @@ namespace DVLD_DataAccess
             return _UserID;
 
         }
-        public static bool UpdateUser(int User_ID,int Person_ID, string Username, string Password, bool IsActive)
+        public static bool UpdateUser(int User_ID, int Person_ID, string Username, string Password, bool IsActive)
         {
             int rowsAffected = 0;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
@@ -186,8 +238,8 @@ namespace DVLD_DataAccess
             try
             {
                 connection.Open();
-               rowsAffected = command.ExecuteNonQuery();
-              
+                rowsAffected = command.ExecuteNonQuery();
+
             }
             catch
             { return false; }
@@ -211,11 +263,106 @@ namespace DVLD_DataAccess
             catch { return false; }
             finally { connection.Close(); }
 
-            return (rowsAffected>0);
+            return (rowsAffected > 0);
 
         }
+        public static bool IsUserExistForPersonID(int PersonID)
+        {
+            bool isFound = false;
 
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
+            string query = "SELECT Found=1 FROM Users WHERE Person_ID = @PersonID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@PersonID", PersonID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                isFound = reader.HasRows;
+
+                reader.Close();
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+        }
+        public static bool DoesPersonHaveUser(int PersonID)
+        {
+            bool isFound = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = "SELECT Found=1 FROM Users WHERE Person_ID = @PersonID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@PersonID", PersonID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                isFound = reader.HasRows;
+
+                reader.Close();
+            }
+            catch 
+            {
+              
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+        }
+        public static bool ChangePassword(int UserID, string NewPassword)
+        {
+
+            int rowsAffected = 0;
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"Update  Users  
+                            set Password = @Password
+                            where User_ID = @UserID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@UserID", UserID);
+
+            try
+            {
+                connection.Open();
+                rowsAffected = command.ExecuteNonQuery();
+
+            }
+            catch 
+            {
+             
+                return false;
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+
+            return (rowsAffected > 0);
+        }
     }
 
 }

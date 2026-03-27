@@ -78,7 +78,7 @@ namespace DVLD_Business
         {
             int  NationalCountryID = -1;
             byte Gendor = 0;
-            string NationalNO = "", FirstName = "", SecondName = "", ThirdName = "", LastName = "", Address = "", Phone = "", Email = "", ImagePath = "",CountryName="";
+            string NationalNO = "", FirstName = "", SecondName = "", ThirdName = "", LastName = "", Address = "", Phone = "", Email = "", ImagePath = "";
             DateTime DateOfBirth = DateTime.Now;
             if (clsPersonData.GetPersonByID(PersonID, ref NationalNO, ref FirstName, ref SecondName, ref ThirdName, ref LastName, ref DateOfBirth, ref Gendor, ref Address, ref Phone, ref Email, ref NationalCountryID, ref ImagePath))
             {
