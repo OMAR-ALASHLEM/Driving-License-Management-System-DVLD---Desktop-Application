@@ -68,14 +68,24 @@ namespace DVLD_Business
             }
             return null;
         }
-        public static clsUser Find(string Username)
+        public static clsUser FindByUsernameAndPassword(string Username, string Password)
         {
-            int Person_ID = -1, User_ID = -1; string Password = ""; bool IsActive = false;
-            if (clsUserData.GetUserByUsernameAndPassword(Username, Password ,ref Person_ID, ref User_ID, ref IsActive))
+            int Person_ID = -1, User_ID = -1; bool IsActive = false;
+            if (clsUserData.GetUserByUsernameAndPassword(Username, Password , ref User_ID,ref Person_ID, ref IsActive))
             {
                 return new clsUser(User_ID, Person_ID, Username, Password, IsActive);
             }
             return null;
+        }
+        public static clsUser FindByPersonID(int PersonID)
+        {
+            int UserID = -1;
+            string UserName = "", Password = "";
+            bool IsActive = false;
+            if (clsUserData.GetUserInfoByPersonID(PersonID, ref UserID, ref UserName, ref Password, ref IsActive))
+                return new clsUser(UserID, PersonID, UserName, Password, IsActive);
+            else
+                return null;
         }
         public static DataTable GetAllUsers() => clsUserData.GetAllUsers();
 
@@ -126,5 +136,9 @@ namespace DVLD_Business
 
         public static bool IsUserExist(int User_ID) => clsUserData.IsUserExist(User_ID);
         public static bool IsUserExist(string Username) => clsUserData.IsUserExist(Username);
+        public static bool isUserExistForPersonID(int PersonID)
+        {
+            return clsUserData.IsUserExistForPersonID(PersonID);
+        }
     }
 }
