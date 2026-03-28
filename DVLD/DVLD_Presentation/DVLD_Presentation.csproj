@@ -103,6 +103,18 @@
     <Compile Include="Users\ctrlUserCard.Designer.cs">
       <DependentUpon>ctrlUserCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Users\frmUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmUserInfo.Designer.cs">
+      <DependentUpon>frmUserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\ManageUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\ManageUsers.Designer.cs">
+      <DependentUpon>ManageUsers.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmtest.resx">
       <DependentUpon>frmtest.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +151,12 @@
     </Compile>
     <EmbeddedResource Include="Users\ctrlUserCard.resx">
       <DependentUpon>ctrlUserCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmUserInfo.resx">
+      <DependentUpon>frmUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\ManageUsers.resx">
+      <DependentUpon>ManageUsers.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

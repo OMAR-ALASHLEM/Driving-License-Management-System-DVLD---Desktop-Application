@@ -46,6 +46,7 @@
             this.personInfo1.Name = "personInfo1";
             this.personInfo1.Size = new System.Drawing.Size(1143, 393);
             this.personInfo1.TabIndex = 3;
+            this.personInfo1.Load += new System.EventHandler(this.personInfo1_Load);
             // 
             // clsLoginInformatin
             // 

@@ -56,11 +56,7 @@ namespace DVLD_Presentation.Users
             lblUserID.Text = _User.User_ID.ToString();
             lblUserName.Text = _User.Username.ToString();
 
-            if (_User.IsActive)
-                lblIsActive.Text = "Yes";
-            else
-                lblIsActive.Text = "No";
-
+            lblIsActive.Text = (_User.IsActive) ? "Yes" : "No";
         }
         private void _ResetPersonInfo()
         {
@@ -71,6 +67,10 @@ namespace DVLD_Presentation.Users
             lblIsActive.Text = "[???]";
         }
 
+        private void personInfo1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
