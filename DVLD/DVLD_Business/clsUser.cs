@@ -71,7 +71,7 @@ namespace DVLD_Business
         public static clsUser FindByUsernameAndPassword(string Username, string Password)
         {
             int Person_ID = -1, User_ID = -1; bool IsActive = false;
-            if (clsUserData.GetUserByUsernameAndPassword(Username, Password , ref User_ID,ref Person_ID, ref IsActive))
+            if (clsUserData.GetUserByUserNameAndPassword(Username, Password , ref User_ID,ref Person_ID, ref IsActive))
             {
                 return new clsUser(User_ID, Person_ID, Username, Password, IsActive);
             }

@@ -70,11 +70,12 @@
             // lbPersonID
             // 
             this.lbPersonID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPersonID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43))))); // لون أحمر هادئ للـ ID
+            this.lbPersonID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
             this.lbPersonID.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbPersonID.Location = new System.Drawing.Point(228, 148);
+            this.lbPersonID.Location = new System.Drawing.Point(266, 182);
+            this.lbPersonID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPersonID.Name = "lbPersonID";
-            this.lbPersonID.Size = new System.Drawing.Size(65, 25);
+            this.lbPersonID.Size = new System.Drawing.Size(76, 31);
             this.lbPersonID.TabIndex = 65;
             this.lbPersonID.Text = "N/A";
             // 
@@ -83,9 +84,10 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.lblTitle.Location = new System.Drawing.Point(372, 60);
+            this.lblTitle.Location = new System.Drawing.Point(434, 74);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(306, 50);
+            this.lblTitle.Size = new System.Drawing.Size(393, 62);
             this.lblTitle.TabIndex = 63;
             this.lblTitle.Text = "Add New Person";
             // 
@@ -94,9 +96,10 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Gray;
-            this.label12.Location = new System.Drawing.Point(900, 189);
+            this.label12.Location = new System.Drawing.Point(1050, 233);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(35, 20);
+            this.label12.Size = new System.Drawing.Size(45, 25);
             this.label12.TabIndex = 62;
             this.label12.Text = "Last";
             // 
@@ -106,9 +109,10 @@
             this.cbCountries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbCountries.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.cbCountries.FormattingEnabled = true;
-            this.cbCountries.Location = new System.Drawing.Point(651, 371);
+            this.cbCountries.Location = new System.Drawing.Point(760, 457);
+            this.cbCountries.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbCountries.Name = "cbCountries";
-            this.cbCountries.Size = new System.Drawing.Size(161, 28);
+            this.cbCountries.Size = new System.Drawing.Size(187, 33);
             this.cbCountries.TabIndex = 61;
             // 
             // dtpDateOfBirth
@@ -116,10 +120,11 @@
             this.dtpDateOfBirth.CalendarFont = new System.Drawing.Font("Segoe UI", 11F);
             this.dtpDateOfBirth.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.dtpDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateOfBirth.Location = new System.Drawing.Point(651, 273);
+            this.dtpDateOfBirth.Location = new System.Drawing.Point(760, 336);
+            this.dtpDateOfBirth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpDateOfBirth.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
-            this.dtpDateOfBirth.Size = new System.Drawing.Size(162, 27);
+            this.dtpDateOfBirth.Size = new System.Drawing.Size(188, 32);
             this.dtpDateOfBirth.TabIndex = 60;
             this.dtpDateOfBirth.Value = new System.DateTime(2026, 3, 25, 10, 47, 47, 0);
             // 
@@ -127,29 +132,33 @@
             // 
             this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(651, 317);
+            this.txtPhone.Location = new System.Drawing.Point(760, 390);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(162, 27);
+            this.txtPhone.Size = new System.Drawing.Size(189, 32);
             this.txtPhone.TabIndex = 59;
             // 
             // txtAddress
             // 
             this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(232, 414);
+            this.txtAddress.Location = new System.Drawing.Point(271, 510);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(581, 104);
+            this.txtAddress.Size = new System.Drawing.Size(678, 128);
             this.txtAddress.TabIndex = 58;
             // 
             // txtEmail
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(232, 368);
+            this.txtEmail.Location = new System.Drawing.Point(271, 453);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(162, 27);
+            this.txtEmail.Size = new System.Drawing.Size(189, 32);
             this.txtEmail.TabIndex = 57;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // rdFemale
@@ -158,9 +167,10 @@
             this.rdFemale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rdFemale.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdFemale.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdFemale.Location = new System.Drawing.Point(339, 316);
+            this.rdFemale.Location = new System.Drawing.Point(396, 389);
+            this.rdFemale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdFemale.Name = "rdFemale";
-            this.rdFemale.Size = new System.Drawing.Size(81, 30);
+            this.rdFemale.Size = new System.Drawing.Size(94, 37);
             this.rdFemale.TabIndex = 56;
             this.rdFemale.Text = "Female";
             this.rdFemale.UseVisualStyleBackColor = true;
@@ -170,9 +180,10 @@
             // 
             this.txtNationalNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNationalNo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNationalNo.Location = new System.Drawing.Point(232, 270);
+            this.txtNationalNo.Location = new System.Drawing.Point(271, 332);
+            this.txtNationalNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNationalNo.Name = "txtNationalNo";
-            this.txtNationalNo.Size = new System.Drawing.Size(162, 27);
+            this.txtNationalNo.Size = new System.Drawing.Size(189, 32);
             this.txtNationalNo.TabIndex = 54;
             this.txtNationalNo.Validating += new System.ComponentModel.CancelEventHandler(this.txtNationalNo_Validating);
             // 
@@ -181,9 +192,10 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Gray;
-            this.label11.Location = new System.Drawing.Point(695, 189);
+            this.label11.Location = new System.Drawing.Point(811, 233);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(43, 20);
+            this.label11.Size = new System.Drawing.Size(56, 25);
             this.label11.TabIndex = 53;
             this.label11.Text = "Third";
             // 
@@ -192,9 +204,10 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Gray;
-            this.label10.Location = new System.Drawing.Point(476, 189);
+            this.label10.Location = new System.Drawing.Point(555, 233);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(58, 20);
+            this.label10.Size = new System.Drawing.Size(74, 25);
             this.label10.TabIndex = 52;
             this.label10.Text = "Second";
             // 
@@ -203,9 +216,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(301, 189);
+            this.label1.Location = new System.Drawing.Point(351, 233);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 20);
+            this.label1.Size = new System.Drawing.Size(47, 25);
             this.label1.TabIndex = 51;
             this.label1.Text = "First";
             // 
@@ -213,9 +227,10 @@
             // 
             this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLastName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastName.Location = new System.Drawing.Point(841, 221);
+            this.txtLastName.Location = new System.Drawing.Point(981, 272);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(162, 27);
+            this.txtLastName.Size = new System.Drawing.Size(189, 32);
             this.txtLastName.TabIndex = 50;
             this.txtLastName.Validating += new System.ComponentModel.CancelEventHandler(this.txtLastName_Validating);
             // 
@@ -223,18 +238,20 @@
             // 
             this.txtThirdName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtThirdName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThirdName.Location = new System.Drawing.Point(638, 221);
+            this.txtThirdName.Location = new System.Drawing.Point(744, 272);
+            this.txtThirdName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtThirdName.Name = "txtThirdName";
-            this.txtThirdName.Size = new System.Drawing.Size(162, 27);
+            this.txtThirdName.Size = new System.Drawing.Size(189, 32);
             this.txtThirdName.TabIndex = 49;
             // 
             // txtSecondName
             // 
             this.txtSecondName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSecondName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSecondName.Location = new System.Drawing.Point(435, 221);
+            this.txtSecondName.Location = new System.Drawing.Point(507, 272);
+            this.txtSecondName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSecondName.Name = "txtSecondName";
-            this.txtSecondName.Size = new System.Drawing.Size(162, 27);
+            this.txtSecondName.Size = new System.Drawing.Size(189, 32);
             this.txtSecondName.TabIndex = 48;
             this.txtSecondName.Validating += new System.ComponentModel.CancelEventHandler(this.txtSecondName_Validating);
             // 
@@ -242,9 +259,10 @@
             // 
             this.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFirstName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstName.Location = new System.Drawing.Point(232, 221);
+            this.txtFirstName.Location = new System.Drawing.Point(271, 272);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(162, 27);
+            this.txtFirstName.Size = new System.Drawing.Size(189, 32);
             this.txtFirstName.TabIndex = 47;
             this.txtFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.txtFirstName_Validating);
             // 
@@ -258,9 +276,10 @@
             this.lbSetImage.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSetImage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.lbSetImage.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbSetImage.Location = new System.Drawing.Point(861, 468);
+            this.lbSetImage.Location = new System.Drawing.Point(1004, 576);
+            this.lbSetImage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSetImage.Name = "lbSetImage";
-            this.lbSetImage.Size = new System.Drawing.Size(113, 23);
+            this.lbSetImage.Size = new System.Drawing.Size(132, 28);
             this.lbSetImage.TabIndex = 68;
             this.lbSetImage.Text = "Set Image";
             this.lbSetImage.Click += new System.EventHandler(this.lbSetImage_Click);
@@ -269,18 +288,19 @@
             // 
             this.lbRemoveImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbRemoveImage.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRemoveImage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60))))); // أحمر للحذف
+            this.lbRemoveImage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.lbRemoveImage.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbRemoveImage.Location = new System.Drawing.Point(874, 506);
+            this.lbRemoveImage.Location = new System.Drawing.Point(1020, 623);
+            this.lbRemoveImage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbRemoveImage.Name = "lbRemoveImage";
-            this.lbRemoveImage.Size = new System.Drawing.Size(88, 23);
+            this.lbRemoveImage.Size = new System.Drawing.Size(103, 28);
             this.lbRemoveImage.TabIndex = 69;
             this.lbRemoveImage.Text = "Remove";
             this.lbRemoveImage.Click += new System.EventHandler(this.lbRemoveImage_Click);
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219))))); // أزرق عصري
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -288,9 +308,10 @@
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = global::DVLD_Presentation.Properties.Resources.Save_32;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(648, 553);
+            this.btnSave.Location = new System.Drawing.Point(756, 681);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(164, 47);
+            this.btnSave.Size = new System.Drawing.Size(191, 58);
             this.btnSave.TabIndex = 67;
             this.btnSave.Text = "   Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -307,9 +328,10 @@
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.btnClose.Image = global::DVLD_Presentation.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(474, 553);
+            this.btnClose.Location = new System.Drawing.Point(553, 681);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(154, 47);
+            this.btnClose.Size = new System.Drawing.Size(180, 58);
             this.btnClose.TabIndex = 38;
             this.btnClose.Text = "   Close";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -318,9 +340,10 @@
             // pbPersonImage
             // 
             this.pbPersonImage.Image = global::DVLD_Presentation.Properties.Resources.Male_512;
-            this.pbPersonImage.Location = new System.Drawing.Point(842, 268);
+            this.pbPersonImage.Location = new System.Drawing.Point(982, 330);
+            this.pbPersonImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbPersonImage.Name = "pbPersonImage";
-            this.pbPersonImage.Size = new System.Drawing.Size(161, 178);
+            this.pbPersonImage.Size = new System.Drawing.Size(188, 219);
             this.pbPersonImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPersonImage.TabIndex = 66;
             this.pbPersonImage.TabStop = false;
@@ -330,9 +353,10 @@
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Image = global::DVLD_Presentation.Properties.Resources.Number_32;
             this.label13.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label13.Location = new System.Drawing.Point(16, 148);
+            this.label13.Location = new System.Drawing.Point(19, 182);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(199, 25);
+            this.label13.Size = new System.Drawing.Size(232, 31);
             this.label13.TabIndex = 64;
             this.label13.Text = "Person ID :";
             // 
@@ -342,11 +366,12 @@
             this.rdMale.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rdMale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rdMale.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdMale.Image = global::DVLD_Presentation.Properties.Resources.Woman_32; // تأكد من اسم الصورة لديك (يبدو أن هنا صورة Woman مع زر Male في كودك الأصلي!)
+            this.rdMale.Image = global::DVLD_Presentation.Properties.Resources.Woman_32;
             this.rdMale.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdMale.Location = new System.Drawing.Point(232, 320);
+            this.rdMale.Location = new System.Drawing.Point(271, 394);
+            this.rdMale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdMale.Name = "rdMale";
-            this.rdMale.Size = new System.Drawing.Size(109, 22);
+            this.rdMale.Size = new System.Drawing.Size(127, 27);
             this.rdMale.TabIndex = 55;
             this.rdMale.TabStop = true;
             this.rdMale.Text = "Male";
@@ -358,9 +383,10 @@
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Image = global::DVLD_Presentation.Properties.Resources.Phone_32;
             this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label8.Location = new System.Drawing.Point(505, 318);
+            this.label8.Location = new System.Drawing.Point(589, 391);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(140, 25);
+            this.label8.Size = new System.Drawing.Size(163, 31);
             this.label8.TabIndex = 46;
             this.label8.Text = "Phone :";
             // 
@@ -369,9 +395,10 @@
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Image = global::DVLD_Presentation.Properties.Resources.Country_32;
             this.label9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label9.Location = new System.Drawing.Point(487, 368);
+            this.label9.Location = new System.Drawing.Point(568, 453);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(158, 33);
+            this.label9.Size = new System.Drawing.Size(184, 41);
             this.label9.TabIndex = 45;
             this.label9.Text = "Country :";
             // 
@@ -380,9 +407,10 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Image = global::DVLD_Presentation.Properties.Resources.Calendar_32;
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label7.Location = new System.Drawing.Point(440, 271);
+            this.label7.Location = new System.Drawing.Point(513, 334);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(205, 25);
+            this.label7.Size = new System.Drawing.Size(239, 31);
             this.label7.TabIndex = 44;
             this.label7.Text = "Date Of Birth :";
             // 
@@ -391,9 +419,10 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Image = global::DVLD_Presentation.Properties.Resources.Address_32;
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label6.Location = new System.Drawing.Point(16, 414);
+            this.label6.Location = new System.Drawing.Point(19, 510);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(199, 32);
+            this.label6.Size = new System.Drawing.Size(232, 39);
             this.label6.TabIndex = 43;
             this.label6.Text = "Address :";
             // 
@@ -402,9 +431,10 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Image = global::DVLD_Presentation.Properties.Resources.Email_32;
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label5.Location = new System.Drawing.Point(16, 368);
+            this.label5.Location = new System.Drawing.Point(19, 453);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(199, 25);
+            this.label5.Size = new System.Drawing.Size(232, 31);
             this.label5.TabIndex = 42;
             this.label5.Text = "Email : ";
             // 
@@ -413,9 +443,10 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Image = global::DVLD_Presentation.Properties.Resources.Man_32;
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label4.Location = new System.Drawing.Point(16, 323);
+            this.label4.Location = new System.Drawing.Point(19, 398);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(199, 25);
+            this.label4.Size = new System.Drawing.Size(232, 31);
             this.label4.TabIndex = 41;
             this.label4.Text = "Gendor : ";
             // 
@@ -424,9 +455,10 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Image = global::DVLD_Presentation.Properties.Resources.Number_32;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label3.Location = new System.Drawing.Point(16, 272);
+            this.label3.Location = new System.Drawing.Point(19, 335);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(199, 25);
+            this.label3.Size = new System.Drawing.Size(232, 31);
             this.label3.TabIndex = 40;
             this.label3.Text = "National No : ";
             // 
@@ -435,20 +467,21 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Image = global::DVLD_Presentation.Properties.Resources.Person_32;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.Location = new System.Drawing.Point(16, 222);
+            this.label2.Location = new System.Drawing.Point(19, 273);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(199, 25);
+            this.label2.Size = new System.Drawing.Size(232, 31);
             this.label2.TabIndex = 39;
             this.label2.Text = " Name : ";
             // 
             // frmAddEditPersonInfo
             // 
             this.AcceptButton = this.btnSave;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(1099, 659);
+            this.ClientSize = new System.Drawing.Size(1282, 811);
             this.Controls.Add(this.lbRemoveImage);
             this.Controls.Add(this.lbSetImage);
             this.Controls.Add(this.btnSave);
@@ -482,6 +515,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAddEditPersonInfo";

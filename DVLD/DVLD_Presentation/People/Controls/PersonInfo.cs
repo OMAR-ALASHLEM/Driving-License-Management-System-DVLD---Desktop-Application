@@ -1,5 +1,6 @@
 ﻿using DVLD_Business;
 using DVLD_Presentation.People;
+using DVLD_Presentation.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,8 +58,12 @@ namespace DVLD_Presentation
             _Person = clsPerson.Find(_PersonID);
             if (_Person == null)
             {
-                WherePersonIDNotFound(_PersonID);
+                ResetPersonInfo();
+                MessageBox.Show("No Person with PersnID No. = " + _PersonID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                WherePersonIDNotFound?.Invoke(_PersonID);
+
                 return;
+              
             }
             lbAddress.Text = _Person.Address;
             lbCountry.Text = _Person.CountryName;
@@ -74,7 +79,7 @@ namespace DVLD_Presentation
                 if(File.Exists(_Person.ImagePath))
                 pbxPicturePerson.ImageLocation=(_Person.ImagePath);
                 else
-                    MessageBox.Show("Xould not found this Inage ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Could not found this Image ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -92,6 +97,27 @@ namespace DVLD_Presentation
             frm.ShowDialog();
             LoadPersonInfo(_PersonID);
             RefreshListPeople?.Invoke();
+        }
+
+        private void gbPersonInformation_Enter_1(object sender, EventArgs e)
+        {
+
+        }
+        public void ResetPersonInfo()
+        {
+            _PersonID = -1;
+            lbPersonID.Text = "[????]";
+            lbNationalNo.Text = "[????]";
+            lbName.Text = "[????]";
+           
+            lbGendor.Text = "[????]";
+            lbEmail.Text = "[????]";
+            lbPhone.Text = "[????]";
+            lbDateOfBirth.Text = "[????]";
+            lbCountry.Text = "[????]";
+            lbAddress.Text = "[????]";
+            pbxPicturePerson.Image = Resources.Male_512;
+
         }
     }
 }

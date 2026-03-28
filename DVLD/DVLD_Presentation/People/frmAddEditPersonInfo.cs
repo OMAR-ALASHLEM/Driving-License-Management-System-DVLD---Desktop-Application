@@ -363,5 +363,9 @@ namespace DVLD_Presentation.People
             return true;
         }
 
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

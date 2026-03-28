@@ -40,11 +40,12 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnClose.Image = global::DVLD_Presentation.Properties.Resources.Close_32; // تأكد من وجود أيقونة Close_32
+            this.btnClose.Image = global::DVLD_Presentation.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(964, 465);
+            this.btnClose.Location = new System.Drawing.Point(1125, 572);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(145, 45);
+            this.btnClose.Size = new System.Drawing.Size(169, 55);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "      Close";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -55,30 +56,33 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 26F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(445, 20);
+            this.label1.Location = new System.Drawing.Point(519, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(262, 47);
+            this.label1.Size = new System.Drawing.Size(320, 60);
             this.label1.TabIndex = 2;
             this.label1.Text = "Person Details";
             // 
             // personInfo1
             // 
             this.personInfo1.BackColor = System.Drawing.Color.White;
-            this.personInfo1.Location = new System.Drawing.Point(29, 85);
+            this.personInfo1.Location = new System.Drawing.Point(34, 105);
+            this.personInfo1.Margin = new System.Windows.Forms.Padding(5);
             this.personInfo1.Name = "personInfo1";
-            this.personInfo1.Size = new System.Drawing.Size(1080, 369);
+            this.personInfo1.Size = new System.Drawing.Size(1260, 454);
             this.personInfo1.TabIndex = 0;
             // 
             // PersonDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1135, 532);
+            this.ClientSize = new System.Drawing.Size(1324, 655);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.personInfo1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PersonDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Person Details";

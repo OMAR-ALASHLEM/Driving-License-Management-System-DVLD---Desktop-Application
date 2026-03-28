@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
+            this.ctrlUserCard1 = new DVLD_Presentation.Users.ctrlUserCard();
             this.SuspendLayout();
             // 
             // button1
@@ -45,11 +46,20 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // ctrlUserCard1
+            // 
+            this.ctrlUserCard1.BackColor = System.Drawing.Color.White;
+            this.ctrlUserCard1.Location = new System.Drawing.Point(44, 25);
+            this.ctrlUserCard1.Name = "ctrlUserCard1";
+            this.ctrlUserCard1.Size = new System.Drawing.Size(1224, 515);
+            this.ctrlUserCard1.TabIndex = 38;
+            // 
             // frmtest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1318, 673);
+            this.Controls.Add(this.ctrlUserCard1);
             this.Controls.Add(this.button1);
             this.Name = "frmtest";
             this.Text = "frmtest";
@@ -60,5 +70,6 @@
 
         #endregion
         private System.Windows.Forms.Button button1;
+        private Users.ctrlUserCard ctrlUserCard1;
     }
 }

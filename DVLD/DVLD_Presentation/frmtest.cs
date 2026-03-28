@@ -22,11 +22,16 @@ namespace DVLD_Presentation
         }
         private void frmtest_Load(object sender, EventArgs e)
         {
-          
+            ctrlUserCard1.WhereUserIDNotFound += CloseFormWherePersonIDNotFound;
+            ctrlUserCard1.LoadUserInfo(1);
            
 
         }
-
+        private void CloseFormWherePersonIDNotFound(int UserID)
+        {
+            MessageBox.Show("No User with UserID = " + UserID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            this.Close();
+        }
         private void addEditPersonInfo1_Load(object sender, EventArgs e)
         {
 
