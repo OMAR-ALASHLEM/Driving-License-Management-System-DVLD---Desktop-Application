@@ -36,7 +36,7 @@ namespace DVLD_Presentation.Users
         {
 
         }
-        public void LoadUserInfo(int UserID=1)
+        public void LoadUserInfo(int UserID)
         {
             _User = clsUser.Find(UserID);
             if (_User == null)

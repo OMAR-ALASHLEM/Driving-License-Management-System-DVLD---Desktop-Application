@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVLD_Presentation.Users;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,6 +32,12 @@ namespace DVLD_Presentation
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageUsers manageUsers= new ManageUsers();
+            manageUsers.ShowDialog();
         }
     }
 }
