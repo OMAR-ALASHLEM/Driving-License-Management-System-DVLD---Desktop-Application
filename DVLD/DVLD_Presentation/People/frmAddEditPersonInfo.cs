@@ -282,7 +282,7 @@ namespace DVLD_Presentation.People
                 MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _Mode = enMode.Update;
                 lblTitle.Text = "Update Person Info";
-                DataBack?.Invoke(this, _PersonID);
+                DataBack?.Invoke(this,_Person.PersonID);
 
             }
             else
@@ -366,6 +366,36 @@ namespace DVLD_Presentation.People
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtPhone_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtPhone.Text))
+            {
+                e.Cancel = true;
+                txtPhone.Focus();
+                errorProvider1.SetError(txtPhone, "Phone Should have a value");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(txtPhone, "");
+            }
+        }
+
+        private void txtAddress_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtAddress.Text))
+            {
+                e.Cancel = true;
+                txtAddress.Focus();
+                errorProvider1.SetError(txtAddress, "Address Should have a value");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(txtAddress, "");
+            }
         }
     }
 }

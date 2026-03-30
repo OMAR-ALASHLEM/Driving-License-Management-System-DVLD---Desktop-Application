@@ -15,9 +15,9 @@ namespace DVLD_Presentation
 {
     public partial class PersonInfo : UserControl
     {
-    public event Action<int> WherePersonIDNotFound;
+        public event Action<int> WherePersonIDNotFound;
         public event Action RefreshListPeople;
-        private int _PersonID=1 ;
+        private int _PersonID = -1;
         clsPerson _Person;
         public PersonInfo()
         {
@@ -28,8 +28,8 @@ namespace DVLD_Presentation
         {
             InitializeComponent();
             _PersonID = PersonID;
-            _LoadData(); 
-       
+            _FillPersonInfo();
+
         }
         public int PersonID { get { return _PersonID; } }
         public clsPerson SelectedPersonInfo
@@ -38,46 +38,57 @@ namespace DVLD_Presentation
         }
         private void PersonInfo_Load(object sender, EventArgs e)
         {
-       
+
 
         }
         public void LoadPersonInfo(int PersonID)
         {
             _PersonID = PersonID;
-            _LoadData(); 
+            _Person = clsPerson.Find(PersonID);
+            if (_Person == null)
+            {
+                ResetPersonInfo();
+                MessageBox.Show("No Person with PersonID  = " + PersonID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                WherePersonIDNotFound?.Invoke(PersonID);
+
+                return;
+
+            }
+
+            _FillPersonInfo();
         }
         public void LoadPersonInfo(string NationalNo)
         {
             _Person = clsPerson.Find(NationalNo);
 
-
-            _LoadData();
-        }
-        private void _LoadData()
-        {
-            _Person = clsPerson.Find(_PersonID);
             if (_Person == null)
             {
                 ResetPersonInfo();
-                MessageBox.Show("No Person with PersnID No. = " + _PersonID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No Person with National No. = " + NationalNo, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 WherePersonIDNotFound?.Invoke(_PersonID);
 
                 return;
-              
+
             }
+            _FillPersonInfo();
+        }
+        private void _FillPersonInfo()
+        {
+           
+
+            lbPersonID.Text =_Person.PersonID.ToString();
             lbAddress.Text = _Person.Address;
             lbCountry.Text = _Person.CountryName;
             lbDateOfBirth.Text = _Person.DateOfBirth.ToString();
             lbEmail.Text = _Person.Email;
             lbName.Text = _Person.FullName();
             lbNationalNo.Text = _Person.NationalNo;
-            lbPersonID.Text = _PersonID.ToString();
             lbPhone.Text = _Person.Phone;
             lbGendor.Text = _Person.Gendor == 0 ? "Male" : "Female";
             if (_Person.ImagePath != "")
             {
-                if(File.Exists(_Person.ImagePath))
-                pbxPicturePerson.ImageLocation=(_Person.ImagePath);
+                if (File.Exists(_Person.ImagePath))
+                    pbxPicturePerson.ImageLocation = (_Person.ImagePath);
                 else
                     MessageBox.Show("Could not found this Image ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -109,7 +120,7 @@ namespace DVLD_Presentation
             lbPersonID.Text = "[????]";
             lbNationalNo.Text = "[????]";
             lbName.Text = "[????]";
-           
+
             lbGendor.Text = "[????]";
             lbEmail.Text = "[????]";
             lbPhone.Text = "[????]";

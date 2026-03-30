@@ -57,12 +57,12 @@ namespace DVLD_Presentation.People.Controls
 
         public int PersonID
         {
-            get { return personInfo1.PersonID; }
+            get { return personInfo2.PersonID; }
         }
 
         public clsPerson SelectedPersonInfo
         {
-            get { return personInfo1.SelectedPersonInfo; }
+            get { return personInfo2.SelectedPersonInfo; }
         }
 
         public void LoadPersonInfo(int PersonID)
@@ -76,14 +76,16 @@ namespace DVLD_Presentation.People.Controls
 
         private void FindNow()
         {
-            switch (cbFilterBy.Text)
+            switch (cbFilterBy.Text.Trim())
             {
+               
                 case "Person ID":
-                    personInfo1.LoadPersonInfo(int.Parse(txtFilterValue.Text));
+
+                    personInfo2.LoadPersonInfo(int.Parse(txtFilterValue.Text));
                     break;
 
                 case "National No.":
-                    personInfo1.LoadPersonInfo(txtFilterValue.Text);
+                    personInfo2.LoadPersonInfo(txtFilterValue.Text);
                     break;
 
                 default:
@@ -91,7 +93,7 @@ namespace DVLD_Presentation.People.Controls
             }
 
             if (OnPersonSelected != null && FilterEnabled)
-                OnPersonSelected(personInfo1.PersonID);
+                OnPersonSelected(personInfo2.PersonID);
         }
 
         private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
@@ -101,11 +103,11 @@ namespace DVLD_Presentation.People.Controls
         }
 
    
-
         private void ctrlPersonInfoWithFilter_Load(object sender, EventArgs e)
         {
             cbFilterBy.SelectedIndex = 0;
             txtFilterValue.Focus();
+            
 
         }
 
@@ -128,10 +130,11 @@ namespace DVLD_Presentation.People.Controls
 
         private void DataBackEvent(object sender, int PersonID)
         {
+           
             
             cbFilterBy.SelectedIndex = 1;
             txtFilterValue.Text = PersonID.ToString();
-            personInfo1.LoadPersonInfo(PersonID);
+            personInfo2.LoadPersonInfo(PersonID);
         }
 
         public void FilterFocus()
@@ -178,6 +181,25 @@ namespace DVLD_Presentation.People.Controls
             frmAddEditPersonInfo frm1 = new frmAddEditPersonInfo();
             frm1.DataBack += DataBackEvent; 
             frm1.ShowDialog();
+        }
+
+        private void txtFilterValue_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbFilterBy_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFilterValue_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+               
+                btnFind.PerformClick();
+            }
         }
     }
 }

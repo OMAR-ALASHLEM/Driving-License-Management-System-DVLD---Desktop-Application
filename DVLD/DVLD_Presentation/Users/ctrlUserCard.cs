@@ -57,6 +57,7 @@ namespace DVLD_Presentation.Users
             lblUserName.Text = _User.Username.ToString();
 
             lblIsActive.Text = (_User.IsActive) ? "Yes" : "No";
+            lblIsActive.ForeColor = (_User.IsActive) ? Color.FromArgb(39, 174, 96) : Color.FromArgb(231, 76, 60);
         }
         private void _ResetPersonInfo()
         {

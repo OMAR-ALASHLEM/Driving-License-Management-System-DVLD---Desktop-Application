@@ -1,4 +1,5 @@
 ﻿using DVLD_Presentation.People;
+using DVLD_Presentation.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,8 +19,7 @@ namespace DVLD_Presentation
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //Application.Run(new PersonDetails());
-            //Application.Run(new frmtest());
+            //Application.Run(new frmFindPerson());
             Application.Run(new MainForm());
         }
     }

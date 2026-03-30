@@ -44,10 +44,10 @@ namespace DVLD_Business
         public clsUser()
         {
             this.User_ID = -1;
-            this.Person_ID = -1;
             this.Username = "";
             this.Password = "";
-            this.IsActive = false;
+            this.IsActive = true    ;
+            Mode = enMode.AddNew;
         }
         private clsUser(int User_ID, int Person_ID, string Username, string Password, bool IsActive)
         {
@@ -100,7 +100,7 @@ namespace DVLD_Business
                 else return  false;
               
             }
-            this.User_ID = clsUserData.AddNewUser(this.Person_ID, this.Username, this.Password, this.IsActive);
+             this.User_ID = clsUserData.AddNewUser(this.Person_ID, this.Username, this.Password, this.IsActive);
             return (this.User_ID != -1);
         }
 

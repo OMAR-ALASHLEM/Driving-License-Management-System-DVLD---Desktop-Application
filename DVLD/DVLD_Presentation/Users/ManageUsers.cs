@@ -64,7 +64,7 @@ namespace DVLD_Presentation.Users
 
         private void cmbFilters_SelectedIndexChanged(object sender, EventArgs e)
         {
-      
+
             if (cmbFilters.Text == "Is Active")
             {
                 txtFilter.Visible = false;
@@ -133,7 +133,7 @@ namespace DVLD_Presentation.Users
 
             try
             {
-                if (FilterColumn == "PersonID"|| FilterColumn == "UserID")
+                if (FilterColumn == "PersonID" || FilterColumn == "UserID")
                 {
 
                     _dtAllUsers.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, txtFilter.Text.Trim());
@@ -196,6 +196,61 @@ namespace DVLD_Presentation.Users
 
             frmUserInfo frm = new frmUserInfo((int)dvgListUsers.CurrentRow.Cells[0].Value);
             frm.ShowDialog();
+        }
+
+        private void sendEmailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmChangePassword frm = new frmChangePassword((int)dvgListUsers.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+        }
+
+        private void _RefreshListUsers()
+        {
+            _dtAllUsers = clsUser.GetAllUsers();
+            _LoadData();
+        }
+
+        private void addNewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddEditUser frm = new frmAddEditUser();
+            frm.ShowDialog();
+            _RefreshListUsers();
+
+        }
+
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            frmAddEditUser frm = new frmAddEditUser();
+            frm.ShowDialog();
+            _RefreshListUsers();
+
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddEditUser frm = new frmAddEditUser((int)dvgListUsers.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+            _RefreshListUsers();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (clsUser.DeleteUser((int)dvgListUsers.CurrentRow.Cells[0].Value))
+            {
+                MessageBox.Show("User has been deleted successfully", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _RefreshListUsers();
+            }
+            else
+            {
+                MessageBox.Show("User is not delted due to data connected to it.", "Faild", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }

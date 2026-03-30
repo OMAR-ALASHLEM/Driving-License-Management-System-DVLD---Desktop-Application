@@ -158,8 +158,8 @@ namespace DVLD_Presentation
 
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int SelectedPersonID = (int)dvgListPeople.CurrentRow.Cells[0].Value;
-            PersonDetails frm = new PersonDetails(SelectedPersonID);
+
+            PersonDetails frm = new PersonDetails((int)dvgListPeople.CurrentRow.Cells[0].Value);
             frm.ShowDialog();
         }
 
@@ -176,8 +176,7 @@ namespace DVLD_Presentation
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int SelectedPersonID = (int)dvgListPeople.CurrentRow.Cells[0].Value;
-            frmAddEditPersonInfo frm = new frmAddEditPersonInfo(SelectedPersonID);
+            frmAddEditPersonInfo frm = new frmAddEditPersonInfo((int)dvgListPeople.CurrentRow.Cells[0].Value);
             frm.ShowDialog();
 
             RefreshListPeople();
@@ -200,6 +199,18 @@ namespace DVLD_Presentation
             {
                 MessageBox.Show("Error: Data Is not Deleted Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ManagePeople_DoubleClick(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void dvgListPeople_DoubleClick(object sender, EventArgs e)
+        {
+            PersonDetails frm = new PersonDetails((int)dvgListPeople.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
         }
     }
 }
