@@ -63,8 +63,9 @@ namespace DVLD_Presentation
                 Properties.Settings.Default.Save(); 
 
                 clsGlobal.CurrentUser = user;
-                this.Hide();
+                
                MainForm mainForm = new MainForm();
+                mainForm.OnLogout += Login_OnLogout;
                 mainForm.Show();
             }
             else
@@ -113,6 +114,27 @@ namespace DVLD_Presentation
             {
                 e.Cancel = false;
                 errorProvider1.SetError(txtPassword, "");
+            }
+        }
+        private void Login_OnLogout()
+        {
+          
+            this.Show();
+
+         
+            if (Properties.Settings.Default.RememberMe)
+            {
+                
+                txtUserName.Text = Properties.Settings.Default.SavedUserName;
+                txtPassword.Text = Properties.Settings.Default.SavedPassword;
+                chkRememberMe.Checked = true;
+            }
+            else
+            {
+      
+                txtUserName.Text = string.Empty;
+                txtPassword.Text = string.Empty;
+                chkRememberMe.Checked = false;
             }
         }
     }
