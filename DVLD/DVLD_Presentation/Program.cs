@@ -20,7 +20,7 @@ namespace DVLD_Presentation
             Application.SetCompatibleTextRenderingDefault(false);
 
             //Application.Run(new frmFindPerson());
-            Application.Run(new MainForm());
+            Application.Run(new frmLogin());
         }
     }
 }
