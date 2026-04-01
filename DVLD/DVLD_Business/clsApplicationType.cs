@@ -60,7 +60,7 @@ namespace DVLD_Business
             }
         }
 
-        public clsApplicationType GetApplicationTypeByID(int ApplicationTypeID)
+        public static clsApplicationType GetApplicationTypeByID(int ApplicationTypeID)
         {
             string Title="";float Fees=0;
             if (clsApplicationTypesData.GetApplicationTypeInfoByID(ApplicationTypeID, ref Title, ref Fees))

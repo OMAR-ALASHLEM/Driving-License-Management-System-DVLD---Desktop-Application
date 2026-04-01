@@ -23,7 +23,7 @@ namespace DVLD_Presentation
             this.Close();
         }
 
-    
+
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -60,11 +60,11 @@ namespace DVLD_Presentation
                     Properties.Settings.Default.SavedUserName = "";
                     Properties.Settings.Default.SavedPassword = "";
                 }
-                Properties.Settings.Default.Save(); 
+                Properties.Settings.Default.Save();
 
                 clsGlobal.CurrentUser = user;
-                
-               MainForm mainForm = new MainForm();
+
+                MainForm mainForm = new MainForm();
                 this.Hide();
                 mainForm.OnLogout += Login_OnLogout;
                 mainForm.Show();
@@ -83,7 +83,7 @@ namespace DVLD_Presentation
                 txtUserName.Text = Properties.Settings.Default.SavedUserName;
                 txtPassword.Text = Properties.Settings.Default.SavedPassword;
                 chkRememberMe.Checked = true;
-            }   
+            }
         }
 
         private void txtUserName_Validating(object sender, CancelEventArgs e)
@@ -100,7 +100,7 @@ namespace DVLD_Presentation
                 e.Cancel = false;
                 errorProvider1.SetError(txtUserName, "");
             }
-           
+
         }
 
         private void txtPassword_Validating(object sender, CancelEventArgs e)
@@ -119,20 +119,20 @@ namespace DVLD_Presentation
         }
         private void Login_OnLogout()
         {
-          
+
             this.Show();
 
-         
+
             if (Properties.Settings.Default.RememberMe)
             {
-                
+
                 txtUserName.Text = Properties.Settings.Default.SavedUserName;
                 txtPassword.Text = Properties.Settings.Default.SavedPassword;
                 chkRememberMe.Checked = true;
             }
             else
             {
-      
+
                 txtUserName.Text = string.Empty;
                 txtPassword.Text = string.Empty;
                 chkRememberMe.Checked = false;
