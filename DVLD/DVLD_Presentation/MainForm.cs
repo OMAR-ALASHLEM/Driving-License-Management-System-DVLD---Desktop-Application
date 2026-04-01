@@ -16,8 +16,6 @@ namespace DVLD_Presentation
     public partial class MainForm : Form
     {
 
-        public delegate void LogoutHandler();
-        public event LogoutHandler OnLogout;
         public MainForm()
         {
             InitializeComponent();
@@ -61,7 +59,7 @@ namespace DVLD_Presentation
         private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             clsGlobal.CurrentUser = null;
-            OnLogout?.Invoke();
+           
             this.Close();
         }
 

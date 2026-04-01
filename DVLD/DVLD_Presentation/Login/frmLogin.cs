@@ -64,10 +64,8 @@ namespace DVLD_Presentation
 
                 clsGlobal.CurrentUser = user;
 
-                MainForm mainForm = new MainForm();
-                this.Hide();
-                mainForm.OnLogout += Login_OnLogout;
-                mainForm.Show();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             else
             {
@@ -117,26 +115,6 @@ namespace DVLD_Presentation
                 errorProvider1.SetError(txtPassword, "");
             }
         }
-        private void Login_OnLogout()
-        {
-
-            this.Show();
-
-
-            if (Properties.Settings.Default.RememberMe)
-            {
-
-                txtUserName.Text = Properties.Settings.Default.SavedUserName;
-                txtPassword.Text = Properties.Settings.Default.SavedPassword;
-                chkRememberMe.Checked = true;
-            }
-            else
-            {
-
-                txtUserName.Text = string.Empty;
-                txtPassword.Text = string.Empty;
-                chkRememberMe.Checked = false;
-            }
-        }
+       
     }
 }
