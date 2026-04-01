@@ -65,6 +65,7 @@ namespace DVLD_Presentation
                 clsGlobal.CurrentUser = user;
                 
                MainForm mainForm = new MainForm();
+                this.Hide();
                 mainForm.OnLogout += Login_OnLogout;
                 mainForm.Show();
             }

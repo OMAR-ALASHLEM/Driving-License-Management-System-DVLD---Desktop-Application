@@ -37,7 +37,7 @@ namespace DVLD_Business
             Mode = enMode.Update;
         }
 
-        public DataTable GetAllApplicationTypes()
+        public static DataTable GetAllApplicationTypes()
         {
             return clsApplicationTypesData.GetAllApplicationTypes();
 

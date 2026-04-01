@@ -1,4 +1,5 @@
 ﻿using DVLD_Business;
+using DVLD_Presentation.Applications.Application_Types;
 using DVLD_Presentation.Users;
 using System;
 using System.Collections.Generic;
@@ -62,6 +63,12 @@ namespace DVLD_Presentation
             clsGlobal.CurrentUser = null;
             OnLogout?.Invoke();
             this.Close();
+        }
+
+        private void manageApplicationTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListApplicationTypes frm = new frmListApplicationTypes();    
+            frm.ShowDialog();
         }
     }
 }
