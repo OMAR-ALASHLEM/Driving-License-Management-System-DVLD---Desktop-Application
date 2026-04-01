@@ -80,12 +80,7 @@ namespace DVLD_Presentation.Users
                 txtFilter.Visible = (cmbFilters.Text != "None");
                 cbIsActive.Visible = false;
 
-                if (cmbFilters.Text == "None")
-                {
-                    txtFilter.Enabled = false;
-                }
-                else
-                    txtFilter.Enabled = true;
+             
 
                 txtFilter.Text = "";
                 txtFilter.Focus();
