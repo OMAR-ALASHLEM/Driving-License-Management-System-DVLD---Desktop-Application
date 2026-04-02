@@ -1,5 +1,6 @@
 ﻿using DVLD_Business;
 using DVLD_Presentation.Applications.Application_Types;
+using DVLD_Presentation.Tests.TestTypes;
 using DVLD_Presentation.Users;
 using System;
 using System.Collections.Generic;
@@ -67,6 +68,12 @@ namespace DVLD_Presentation
         {
             frmListApplicationTypes frm = new frmListApplicationTypes();    
             frm.ShowDialog();
+        }
+
+        private void manageTestTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListTestTypes frm = new frmListTestTypes();
+            frm.ShowDialog();   
         }
     }
 }
