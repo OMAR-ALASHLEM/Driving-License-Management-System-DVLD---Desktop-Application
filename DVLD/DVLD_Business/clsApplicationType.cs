@@ -28,7 +28,7 @@ namespace DVLD_Business
 
         }
 
-        public clsApplicationType(int ID, string ApplicationTypeTitel, float ApplicationTypeFees)
+        private clsApplicationType(int ID, string ApplicationTypeTitel, float ApplicationTypeFees)
 
         {
             this.ID = ID;
