@@ -44,7 +44,7 @@ namespace DVLD_DataAccess
             }
             return IsFound;
         }
-        public static DataTable GetAllLicensesClasses()
+        public static DataTable GetAllLicenseClasses()
         {
             DataTable table = new DataTable();
 
