@@ -255,7 +255,6 @@ namespace DVLD_DataAccess
 
             return (rowsAffected > 0);
         }
-
         public static bool DeactivateLicense(int LicenseID)
         {
             int result = 0;
