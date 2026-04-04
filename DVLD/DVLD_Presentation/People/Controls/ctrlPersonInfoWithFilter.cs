@@ -52,9 +52,6 @@ namespace DVLD_Presentation.People.Controls
             InitializeComponent();
         }
 
-
-        private int _PersonID = -1;
-
         public int PersonID
         {
             get { return personInfo2.PersonID; }
