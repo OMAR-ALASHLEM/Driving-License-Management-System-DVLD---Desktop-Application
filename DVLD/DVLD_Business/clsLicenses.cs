@@ -30,6 +30,19 @@ namespace DVLD_Business
         public float PaidFees { get; set; }
         public string Notes { get; set; }
 
+        private clsLicenseClass _LicenseClassInfo;
+
+        public clsLicenseClass LicenseClassInfo
+        {
+            get
+            {
+                if (_LicenseClassInfo == null)
+                {
+                    _LicenseClassInfo = clsLicenseClass.Find(this.LicenseClass);
+                }
+                return _LicenseClassInfo;
+            }
+        }
         public string IssueReasonText
         {
             get
