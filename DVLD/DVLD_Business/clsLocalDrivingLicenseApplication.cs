@@ -13,6 +13,8 @@ namespace DVLD_Business
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode Mode = enMode.AddNew;
 
+    
+
         public int LocalDrivingLicenseApplicationID { get; set; }
         public int LicenseClassID { get; set; }
 
