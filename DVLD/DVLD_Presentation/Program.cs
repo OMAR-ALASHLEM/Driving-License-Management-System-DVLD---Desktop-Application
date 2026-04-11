@@ -20,37 +20,37 @@ namespace DVLD_Presentation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAddUpdateLocalDrivingLicesnseApplication());
-            //bool keepRunning = true;
+            //Application.Run(new frmListLocalDrivingLicesnseApplications());
+            bool keepRunning = true;
 
-            //while (keepRunning)
-            //{
+            while (keepRunning)
+            {
 
-            //    using (frmLogin loginForm = new frmLogin())
-            //    {
+                using (frmLogin loginForm = new frmLogin())
+                {
 
-            //        if (loginForm.ShowDialog() == DialogResult.OK)
-            //        {
+                    if (loginForm.ShowDialog() == DialogResult.OK)
+                    {
 
-            //            Application.Run(new MainForm());
+                        Application.Run(new MainForm());
 
 
-            //            if (clsGlobal.CurrentUser == null)
-            //            {
-            //                keepRunning = true; 
-            //            }
-            //            else
-            //            {
-            //                keepRunning = false; 
-            //            }
-            //        }
-            //        else
-            //        {
+                        if (clsGlobal.CurrentUser == null)
+                        {
+                            keepRunning = true;
+                        }
+                        else
+                        {
+                            keepRunning = false;
+                        }
+                    }
+                    else
+                    {
 
-            //            keepRunning = false;
-            //        }
-            //    }
-            //}
+                        keepRunning = false;
+                    }
+                }
+            }
         }
     }
 }
