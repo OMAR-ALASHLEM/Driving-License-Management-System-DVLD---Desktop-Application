@@ -108,7 +108,7 @@
             // 
             this.btnAddNewApplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddNewApplication.Image = global::DVLD_Presentation.Properties.Resources.New_Application_64;
-            this.btnAddNewApplication.Location = new System.Drawing.Point(1302, 210);
+            this.btnAddNewApplication.Location = new System.Drawing.Point(1337, 210);
             this.btnAddNewApplication.Name = "btnAddNewApplication";
             this.btnAddNewApplication.Size = new System.Drawing.Size(88, 75);
             this.btnAddNewApplication.TabIndex = 132;
@@ -177,7 +177,7 @@
             this.toolStripSeparator6,
             this.showPersonLicenseHistoryToolStripMenuItem});
             this.cmsApplications.Name = "contextMenuStrip1";
-            this.cmsApplications.Size = new System.Drawing.Size(262, 344);
+            this.cmsApplications.Size = new System.Drawing.Size(262, 366);
             // 
             // showDetailsToolStripMenuItem
             // 
@@ -220,6 +220,7 @@
             this.CancelApplicaitonToolStripMenuItem.Name = "CancelApplicaitonToolStripMenuItem";
             this.CancelApplicaitonToolStripMenuItem.Size = new System.Drawing.Size(261, 38);
             this.CancelApplicaitonToolStripMenuItem.Text = "&Cancel Application";
+            this.CancelApplicaitonToolStripMenuItem.Click += new System.EventHandler(this.CancelApplicaitonToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 

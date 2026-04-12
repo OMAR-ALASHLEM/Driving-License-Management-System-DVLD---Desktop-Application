@@ -138,5 +138,11 @@ namespace DVLD_Presentation.Applications.Local_Driving_License
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
             }
         }
+
+        private void CancelApplicaitonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int LocalDrivingLicenseApplicationID = (int)dvgListLocalDrivangApplication.CurrentRow.Cells[0].Value;
+            clsApplication.Cancel(LocalDrivingLicenseApplicationID);
+        }
     }
 }

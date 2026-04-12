@@ -150,9 +150,12 @@ namespace DVLD_Business
             }
             return false;
         }
-        public bool Cancel() => clsApplicationData.UpdateStatus(ApplicationID, 2);
-        public bool SetComplete() => clsApplicationData.UpdateStatus(ApplicationID, 3);
-        public bool Delete() => clsApplicationData.DeleteApplication(this.ApplicationID);
+        public bool Cancel() =>  clsApplication.Cancel(this.ApplicationID);
+        public static bool Cancel(int ApplicationID) => clsApplicationData.UpdateStatus(ApplicationID, 2);
+        public bool SetComplete() => clsApplication.SetComplete(this.ApplicationID);
+        public static bool SetComplete(int ApplicationID) => clsApplicationData.UpdateStatus(ApplicationID, 3);
+        public bool Delete() => clsApplication.Delete(this.ApplicationID);
+        public static bool Delete(int ApplicationID) => clsApplicationData.DeleteApplication(ApplicationID);
         public static bool IsApplicationExist(int ApplicationID) => clsApplicationData.IsApplicationExist(ApplicationID);
         public static bool DoesPersonHaveActiveApplication(int PersonID, int ApplicationTypeID) => clsApplicationData.DoesPersonHaveActiveApplication(PersonID, ApplicationTypeID);
         public bool DoesPersonHaveActiveApplication(int ApplicationTypeID) => DoesPersonHaveActiveApplication(this.ApplicantPersonID, ApplicationTypeID);
