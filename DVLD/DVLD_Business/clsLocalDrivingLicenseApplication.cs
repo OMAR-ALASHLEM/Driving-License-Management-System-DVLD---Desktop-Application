@@ -10,8 +10,8 @@ namespace DVLD_Business
 {
     public class clsLocalDrivingLicenseApplication : clsApplication
     {
-        public enum enMode { AddNew = 0, Update = 1 };
-        public enMode Mode = enMode.AddNew;
+        public new enum enMode { AddNew = 0, Update = 1 };
+        public new enMode Mode = enMode.AddNew;
 
     
 
@@ -95,7 +95,7 @@ namespace DVLD_Business
 
         }
 
-        public bool Save()
+        public new  bool Save()
         {
 
          
@@ -127,7 +127,7 @@ namespace DVLD_Business
 
         public static DataTable GetAllLocalDrivingLicenseApplications() => clsLocalDrivingLicenseApplicationData.GetAllLocalDrivingLicenseApplications();
 
-        public bool Delete()
+        public new bool Delete()
         {
             bool IsLocalDrivingApplicationDeleted = false;
             bool IsBaseApplicationDeleted = false;

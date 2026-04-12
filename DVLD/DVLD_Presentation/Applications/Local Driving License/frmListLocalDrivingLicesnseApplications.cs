@@ -138,5 +138,33 @@ namespace DVLD_Presentation.Applications.Local_Driving_License
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
             }
         }
+        private void CancelApplicaitonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (clsApplication.Cancel((int)dvgListLocalDrivangApplication.CurrentRow.Cells[0].Value))
+            {
+                MessageBox.Show("Application Cancelled Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _LoadData();
+
+            }
+            else
+            {
+                MessageBox.Show("Failed to Cancel Application.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void DeleteApplicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to delete this application?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                if (clsApplication.Delete((int)dvgListLocalDrivangApplication.CurrentRow.Cells[0].Value))
+                {
+                    MessageBox.Show("Application Deleted Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to Delete Application.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }   
+        }
     }
 }
