@@ -1,6 +1,7 @@
 ﻿using DVLD_Business;
 using DVLD_Presentation.Applications.Application_Types;
 using DVLD_Presentation.Applications.Local_Driving_License;
+using DVLD_Presentation.Drivers;
 using DVLD_Presentation.Tests.TestTypes;
 using DVLD_Presentation.Users;
 using System;
@@ -92,6 +93,13 @@ namespace DVLD_Presentation
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void driversToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListDrivers frm = new frmListDrivers();
+            frm.ShowDialog();
+
         }
     }
 }
