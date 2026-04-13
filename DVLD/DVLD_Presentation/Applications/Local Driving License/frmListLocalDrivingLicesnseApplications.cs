@@ -188,5 +188,12 @@ namespace DVLD_Presentation.Applications.Local_Driving_License
                 }
             
         }
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLocalDrivingLicenseApplicationInfo frm = new frmLocalDrivingLicenseApplicationInfo((int)dvgListLocalDrivangApplication.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+
+        }
     }
 }

@@ -77,7 +77,7 @@ namespace DVLD_Presentation.Applications.Local_Driving_License
            
             lblLocalDrivingLicenseApplicationID.Text = _LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID.ToString();
             lblAppliedFor.Text = clsLicenseClass.Find( _LocalDrivingLicenseApplication.LicenseClassID).ClassName ;
-            lblPassedTests.Text = "not implemented yet";
+            //lblPassedTests.Text = "not implemented yet!";
             ctrlApplicationBasicInfo1.LoadApplicationInfo(_LocalDrivingLicenseApplication.ApplicationID);
 
         }
@@ -90,13 +90,6 @@ namespace DVLD_Presentation.Applications.Local_Driving_License
             lblAppliedFor.Text = "[????]";
 
 
-        }
-
-        private void llShowLicenceInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            MessageBox.Show("Not implemented yet");
-            //frmShowLicenseInfo frm = new frmShowLicenseInfo(_LocalDrivingLicenseApplication.GetActiveLicenseID());
-            //frm.ShowDialog();
         }
     }
 }
