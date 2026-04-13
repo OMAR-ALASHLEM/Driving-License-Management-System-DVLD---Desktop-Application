@@ -635,5 +635,17 @@
   <ItemGroup>
     <Folder Include="Licenses\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DVLDImageMain1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DVLDImageMain_Man1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DVLDPapeerImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DVLDLogin.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

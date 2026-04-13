@@ -88,5 +88,10 @@ namespace DVLD_Presentation
             Form frm =new frmListLocalDrivingLicesnseApplications();
             frm.ShowDialog();   
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
