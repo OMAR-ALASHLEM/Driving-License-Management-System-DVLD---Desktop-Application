@@ -173,5 +173,7 @@ namespace DVLD_Business
 
         }
 
+        public static DataTable GetDriverLicenses(int DriverID)=> clsLicensesData.GetDriverLicenses(DriverID);
+       
     }
 }
