@@ -143,5 +143,8 @@ namespace DVLD_Business
 
         }
 
+        public int GetActiveLicenseID() => clsLicenses.GetActiveLicenseIDByPersonID(this.ApplicantPersonID, this.LicenseClassID);
+
+
     }
 }
