@@ -98,7 +98,8 @@ namespace DVLD_Presentation.Applications.Local_Driving_License
             cbLicenseClass.SelectedValue = _LocalDrivingLicenseApplication.LicenseClassID;
 
             cbLicenseClass.Enabled = false;
-            ctrlPersonInfoWithFilter1.Enabled = false;
+            ctrlPersonInfoWithFilter1.FilterEnabled = false;
+
 
         }
         private void _FillLicensesClass()
@@ -164,7 +165,6 @@ namespace DVLD_Presentation.Applications.Local_Driving_License
                 ctrlPersonInfoWithFilter1.FilterEnabled = false;
                 tabLocalDrivingLicense.SelectedIndex = 1;
                 cbLicenseClass.Enabled = false;
-                ctrlPersonInfoWithFilter1.Enabled = false;
                 tabApplicaionInfo.Enabled = true;
                 btnSave.Enabled = true;
 

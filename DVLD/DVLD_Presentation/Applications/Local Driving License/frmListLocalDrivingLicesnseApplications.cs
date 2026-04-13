@@ -193,6 +193,16 @@ namespace DVLD_Presentation.Applications.Local_Driving_License
         {
             frmLocalDrivingLicenseApplicationInfo frm = new frmLocalDrivingLicenseApplicationInfo((int)dvgListLocalDrivangApplication.CurrentRow.Cells[0].Value);
             frm.ShowDialog();
+            frmListLocalDrivingLicesnseApplications_Load(null, null);
+
+
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddUpdateLocalDrivingLicesnseApplication frm = new frmAddUpdateLocalDrivingLicesnseApplication((int)dvgListLocalDrivangApplication.CurrentRow.Cells[0].Value); 
+            frm.ShowDialog();
+            frmListLocalDrivingLicesnseApplications_Load(null, null);
 
         }
     }
