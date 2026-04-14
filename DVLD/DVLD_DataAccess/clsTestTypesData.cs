@@ -73,6 +73,50 @@ namespace DVLD_DataAccess
 
         }
 
+        public static int AddNewTestType(string Title, string Description, float Fees)
+        {
+            int TestTypeID = -1;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"Insert Into TestTypes (TestTypeTitle,TestTypeTitle,TestTypeFees)
+                            Values (@TestTypeTitle,@TestTypeDescription,@ApplicationFees)
+                            where TestTypeID = @TestTypeID;
+                            SELECT SCOPE_IDENTITY();";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@TestTypeTitle", Title);
+            command.Parameters.AddWithValue("@TestTypeDescription", Description);
+            command.Parameters.AddWithValue("@ApplicationFees", Fees);
+
+            try
+            {
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+
+                if (result != null && int.TryParse(result.ToString(), out int insertedID))
+                {
+                    TestTypeID = insertedID;
+                }
+            }
+
+            catch 
+            {
+              
+
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+
+
+            return TestTypeID;
+
+        }
         public static bool UpdateTestType(int TestTypeID, string Title, string Description, float Fees)
         {
             int rowsAffected = 0;
