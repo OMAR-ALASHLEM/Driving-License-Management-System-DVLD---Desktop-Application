@@ -8,14 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DVLD_Business.clsTestTypes;
 
 namespace DVLD_Presentation.Tests.TestTypes
 {
     public partial class frmUpdateTestTypes : Form
     {
-        private int _TestTypeID;
+        private clsTestTypes.enTestType _TestTypeID = clsTestTypes.enTestType.VisionTest;
+
         private clsTestTypes _testTypes;
-        public frmUpdateTestTypes(int TestTypeID )
+        public frmUpdateTestTypes(clsTestTypes.enTestType TestTypeID)
         {
             InitializeComponent();
             _TestTypeID = TestTypeID;
@@ -36,12 +38,25 @@ namespace DVLD_Presentation.Tests.TestTypes
         }
         private void _LoadData()
         {
-            lbAppTypeID.Text = _TestTypeID.ToString();
             _testTypes = clsTestTypes.Find(_TestTypeID);
 
-            txtTitle.Text = _testTypes.TestTypeTitle;
-            txtDescription.Text = _testTypes.TestTypeDescription;
-            txtFees.Text = Convert.ToString(_testTypes.TestTypeFees);
+            if (_testTypes != null)
+            {
+
+
+                lbAppTypeID.Text = ((int)_TestTypeID).ToString();
+                txtTitle.Text = _testTypes.TestTypeTitle;
+                txtDescription.Text = _testTypes.TestTypeDescription;
+                txtFees.Text = Convert.ToString(_testTypes.TestTypeFees);
+            }
+
+            else
+
+            {
+                MessageBox.Show("Could not find Test Type with id = " + _TestTypeID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+
+            }
         }
 
         private void txtTitle_Validating(object sender, CancelEventArgs e)
