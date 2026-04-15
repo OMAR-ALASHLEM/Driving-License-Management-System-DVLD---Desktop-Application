@@ -12,14 +12,34 @@ namespace DVLD_Business
     {
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode Mode = enMode.AddNew;
-
+        private clsTestAppintment _TestAppointment;
+        private int _TestAppointmentID;
         public int TestID { set; get; }
-        public int TestAppointmentID { set; get; }
-     
+
+        public int TestAppointmentID
+        {
+            get { return _TestAppointmentID; }
+            set
+            {
+                _TestAppointmentID = value;
+                this.TestAppointmentInfo = clsTestAppintment.Find(value);
+            }
+        }
         public bool TestResult { set; get; }
         public string Notes { set; get; }
         public int CreatedByUserID { set; get; }
 
+        public clsTestAppintment TestAppointmentInfo
+        {
+            get
+            {
+                if (_TestAppointment == null && this.TestAppointmentID != -1)
+                    _TestAppointment = clsTestAppintment.Find(this.TestAppointmentID);
+
+                return _TestAppointment;
+            }
+            set { _TestAppointment = value; }
+        }
         public clsTest()
 
         {
