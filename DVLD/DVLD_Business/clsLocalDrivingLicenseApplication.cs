@@ -13,8 +13,6 @@ namespace DVLD_Business
         public new enum enMode { AddNew = 0, Update = 1 };
         public new enMode Mode = enMode.AddNew;
 
-    
-
         public int LocalDrivingLicenseApplicationID { get; set; }
         public int LicenseClassID { get; set; }
 
@@ -45,14 +43,12 @@ namespace DVLD_Business
             this.LicenseClassID = -1;
             Mode = enMode.AddNew;
         }
-
         private bool _AddNewLocalDrivingLicenseApplication()
         {
             this.LocalDrivingLicenseApplicationID = clsLocalDrivingLicenseApplicationData.AddNewLocalDrivingLicenseApplication(this.ApplicationID, this.LicenseClassID);
             return (this.LocalDrivingLicenseApplicationID != -1);
         }
         private bool _UpdateLocalDrivingLicenseApplication() => clsLocalDrivingLicenseApplicationData.UpdateLocalDrivingLicenseApplication(this.LocalDrivingLicenseApplicationID, this.ApplicationID, this.LicenseClassID);
-
         public static clsLocalDrivingLicenseApplication FindByLocalDrivingAppLicenseID(int LocalDrivingLicenseApplicationID)
         {
             int ApplicationID = -1, LicenseClassID = -1;
@@ -71,7 +67,6 @@ namespace DVLD_Business
                 return null;
 
         }
-
         public static clsLocalDrivingLicenseApplication FindByApplicationID(int ApplicationID)
         {
             // 
@@ -94,17 +89,16 @@ namespace DVLD_Business
 
 
         }
-
-        public new  bool Save()
+        public new bool Save()
         {
 
-         
+
             base.Mode = (clsApplication.enMode)Mode;
             if (!base.Save())
                 return false;
 
 
-      
+
             switch (Mode)
             {
                 case enMode.AddNew:
@@ -113,8 +107,8 @@ namespace DVLD_Business
                         Mode = enMode.Update;
                         return true;
                     }
-                    else  return false;
-                  
+                    else return false;
+
 
                 case enMode.Update:
 
@@ -124,14 +118,12 @@ namespace DVLD_Business
 
             return false;
         }
-
         public static DataTable GetAllLocalDrivingLicenseApplications() => clsLocalDrivingLicenseApplicationData.GetAllLocalDrivingLicenseApplications();
-
         public new bool Delete()
         {
             bool IsLocalDrivingApplicationDeleted = false;
             bool IsBaseApplicationDeleted = false;
-    
+
             IsLocalDrivingApplicationDeleted = clsLocalDrivingLicenseApplicationData.DeleteLocalDrivingLicenseApplication(this.LocalDrivingLicenseApplicationID);
 
             if (!IsLocalDrivingApplicationDeleted)
@@ -142,8 +134,9 @@ namespace DVLD_Business
             return IsBaseApplicationDeleted;
 
         }
-
         public int GetActiveLicenseID() => clsLicenses.GetActiveLicenseIDByPersonID(this.ApplicantPersonID, this.LicenseClassID);
+        public byte TotalTrialsPerTest(clsTestTypes.enTestType TestTypeID) => clsLocalDrivingLicenseApplicationData.TotalTrialsPerTest(this.LocalDrivingLicenseApplicationID, (int)TestTypeID);
+        public static byte TotalTrialsPerTest(int LocalDrivingLicenseApplicationID, clsTestTypes.enTestType TestTypeID) => clsLocalDrivingLicenseApplicationData.TotalTrialsPerTest(LocalDrivingLicenseApplicationID, (int)TestTypeID);
 
 
     }
