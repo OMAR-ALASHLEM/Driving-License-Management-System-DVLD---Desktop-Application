@@ -12,7 +12,7 @@ namespace DVLD_Business
     {
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode Mode = enMode.AddNew;
-
+        private clsApplication _RetakeTestAppInfo;
         public int TestAppointmentID { set; get; }
         public clsTestTypes.enTestType TestTypeID { set; get; }
         public int CreatedByUserID { set; get; }
@@ -26,6 +26,17 @@ namespace DVLD_Business
         {
             get { return _GetTestID(); }
 
+        }
+        public clsApplication RetakeTestAppInfo
+        {
+            get
+            {
+                if (_RetakeTestAppInfo == null && this.RetakeTestApplicationID != -1)
+                    _RetakeTestAppInfo = clsApplication.Find(RetakeTestApplicationID);
+
+                return _RetakeTestAppInfo;
+            }
+            set { _RetakeTestAppInfo = value; }
         }
         public clsTestAppintment()
 
