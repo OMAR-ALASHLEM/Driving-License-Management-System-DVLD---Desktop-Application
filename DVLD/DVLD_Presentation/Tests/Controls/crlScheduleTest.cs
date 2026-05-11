@@ -69,7 +69,7 @@ namespace DVLD_Presentation.Tests.Controls
             }
         }
 
-        private void _LoadData(int LocalDrivingLicenseApplicationID, int AppointmentID = -1)
+        public void _LoadData(int LocalDrivingLicenseApplicationID, int AppointmentID = -1)
         {
             if (AppointmentID == -1)
                 _Mode = enMode.AddNew;
