@@ -50,6 +50,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.llShowLicenceInfo);
             this.groupBox1.Controls.Add(this.pictureBox3);
             this.groupBox1.Controls.Add(this.pictureBox1);
@@ -62,6 +63,7 @@
             this.groupBox1.Controls.Add(this.lblLocalDrivingLicenseApplicationID);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(744, 132);
@@ -188,7 +190,7 @@
             // 
             this.ctrlApplicationBasicInfo1.BackColor = System.Drawing.Color.White;
             this.ctrlApplicationBasicInfo1.Location = new System.Drawing.Point(2, 140);
-            this.ctrlApplicationBasicInfo1.Margin = new System.Windows.Forms.Padding(2);
+            this.ctrlApplicationBasicInfo1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ctrlApplicationBasicInfo1.Name = "ctrlApplicationBasicInfo1";
             this.ctrlApplicationBasicInfo1.Size = new System.Drawing.Size(684, 272);
             this.ctrlApplicationBasicInfo1.TabIndex = 3;
@@ -200,6 +202,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.ctrlApplicationBasicInfo1);
             this.Controls.Add(this.groupBox1);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.Name = "ctrlDrivingLicenseApplicationInfo";
             this.Size = new System.Drawing.Size(761, 424);
             this.Load += new System.EventHandler(this.ctrlDrivingLicenseApplicationInfo_Load);
