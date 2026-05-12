@@ -142,6 +142,6 @@ namespace DVLD_Business
         public bool IsThereAnActiveScheduledTest(clsTestTypes.enTestType TestTypeID) => clsLocalDrivingLicenseApplicationData.IsThereAnActiveScheduledTest(this.LocalDrivingLicenseApplicationID, (int)TestTypeID);
         public bool DoesAttendTestType(clsTestTypes.enTestType TestTypeID) => clsLocalDrivingLicenseApplicationData.DoesAttendTestType(this.LocalDrivingLicenseApplicationID, (int)TestTypeID);
         public bool DoesPassTestType(clsTestTypes.enTestType TestTypeID) => clsLocalDrivingLicenseApplicationData.DoesPassTestType(this.LocalDrivingLicenseApplicationID, (int)TestTypeID);
-
+        public bool IsLicenseIssued() => (GetActiveLicenseID() != -1);
     }
 }
