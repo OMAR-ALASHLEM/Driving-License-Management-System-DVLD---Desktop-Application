@@ -23,7 +23,7 @@ namespace DVLD_Business
 
         public int LicenseID { get; set; }
         public int ApplicationID { get; set; }
-        public int DriverID { get; set; }
+        public int DriverID { get { return _Driver_ID; } set { _Driver_ID = value; } }
         public int LicenseClass { get; set; }
         public int CreatedByUserID { get; set; }
         public enIssueReason IssueReason { get; set; }
@@ -87,7 +87,7 @@ namespace DVLD_Business
         {
             this.LicenseID = LicenseID;
             this.ApplicationID = ApplicationID;
-            this.DriverID = DriverID;
+            this._Driver_ID = DriverID;
             this.LicenseClass = LicenseClass;
             this.CreatedByUserID = CreatedByUserID;
             this.IssueDate = IssueDate;

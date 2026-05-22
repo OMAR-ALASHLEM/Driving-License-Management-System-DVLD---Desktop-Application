@@ -60,7 +60,7 @@ namespace DVLD_Presentation.Licenses.Controls
 
             lblLicenseID.Text = _License.LicenseID.ToString();
             lblIsActive.Text = _License.IsActive ? "Yes" : "No";
-            lblIsDetained.Text = "Not implement yet";
+            lblIsDetained.Text = "Not implemented yet";
             lblClass.Text = _License.LicenseClassInfo.ClassName;
             lblFullName.Text = _License.DriverInfo.PersonInfo.FullName();
             lblNationalNo.Text = _License.DriverInfo.PersonInfo.NationalNo;
@@ -78,6 +78,11 @@ namespace DVLD_Presentation.Licenses.Controls
 
         }
         private void ctrlDriverLicenseInfo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
