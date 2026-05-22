@@ -12,6 +12,9 @@ namespace DVLD_Business
     public class clsLicenses
     {
 
+        private clsDriver _Driver;
+        private int _Driver_ID;
+
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode Mode = enMode.AddNew;
 
@@ -51,6 +54,17 @@ namespace DVLD_Business
             }
         }
 
+        public clsDriver DriverInfo
+        {
+            get
+            {
+                if (_Driver == null && this._Driver_ID != -1)
+                    _Driver = clsDriver.FindByDriverID(this._Driver_ID);
+
+                return _Driver;
+            }
+            set { _Driver = value; }
+        }
         public clsLicenses()
         {
             this.LicenseID = -1;
