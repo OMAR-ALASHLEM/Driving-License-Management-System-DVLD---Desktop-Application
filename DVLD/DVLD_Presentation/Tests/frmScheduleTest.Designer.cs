@@ -46,11 +46,10 @@ namespace DVLD_Presentation.Tests
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.btnClose.Image = global::DVLD_Presentation.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(520, 957);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClose.Location = new System.Drawing.Point(517, 943);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnClose.Size = new System.Drawing.Size(251, 52);
+            this.btnClose.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnClose.Size = new System.Drawing.Size(251, 49);
             this.btnClose.TabIndex = 39;
             this.btnClose.Text = "      Close Window";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -60,21 +59,23 @@ namespace DVLD_Presentation.Tests
             // 
             this.crlScheduleTest1.BackColor = System.Drawing.Color.White;
             this.crlScheduleTest1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.crlScheduleTest1.Location = new System.Drawing.Point(12, 12);
+            this.crlScheduleTest1.Location = new System.Drawing.Point(8, 8);
+            this.crlScheduleTest1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.crlScheduleTest1.Name = "crlScheduleTest1";
-            this.crlScheduleTest1.Size = new System.Drawing.Size(850, 938);
+            this.crlScheduleTest1.Size = new System.Drawing.Size(855, 930);
             this.crlScheduleTest1.TabIndex = 40;
             this.crlScheduleTest1.TestTypeID = DVLD_Business.clsTestTypes.enTestType.VisionTest;
             // 
             // frmScheduleTest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(867, 1028);
+            this.ClientSize = new System.Drawing.Size(874, 1001);
             this.Controls.Add(this.crlScheduleTest1);
             this.Controls.Add(this.btnClose);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmScheduleTest";

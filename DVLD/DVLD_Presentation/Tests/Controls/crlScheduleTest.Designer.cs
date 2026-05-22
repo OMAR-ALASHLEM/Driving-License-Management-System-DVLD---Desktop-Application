@@ -92,7 +92,7 @@ namespace DVLD_Presentation.Tests.Controls
             this.lblTotalFees.ForeColor = System.Drawing.Color.ForestGreen;
             this.lblTotalFees.Location = new System.Drawing.Point(560, 95);
             this.lblTotalFees.Name = "lblTotalFees";
-            this.lblTotalFees.Size = new System.Drawing.Size(68, 30);
+            this.lblTotalFees.Size = new System.Drawing.Size(48, 20);
             this.lblTotalFees.TabIndex = 206;
             this.lblTotalFees.Text = "[$$$]";
             // 
@@ -114,7 +114,7 @@ namespace DVLD_Presentation.Tests.Controls
             this.lblRetakeAppFees.ForeColor = System.Drawing.Color.DarkOrange;
             this.lblRetakeAppFees.Location = new System.Drawing.Point(250, 95);
             this.lblRetakeAppFees.Name = "lblRetakeAppFees";
-            this.lblRetakeAppFees.Size = new System.Drawing.Size(68, 30);
+            this.lblRetakeAppFees.Size = new System.Drawing.Size(48, 20);
             this.lblRetakeAppFees.TabIndex = 203;
             this.lblRetakeAppFees.Text = "[$$$]";
             // 
@@ -136,7 +136,7 @@ namespace DVLD_Presentation.Tests.Controls
             this.lblRetakeTestAppID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.lblRetakeTestAppID.Location = new System.Drawing.Point(250, 40);
             this.lblRetakeTestAppID.Name = "lblRetakeTestAppID";
-            this.lblRetakeTestAppID.Size = new System.Drawing.Size(49, 30);
+            this.lblRetakeTestAppID.Size = new System.Drawing.Size(35, 20);
             this.lblRetakeTestAppID.TabIndex = 199;
             this.lblRetakeTestAppID.Text = "[??]";
             // 
@@ -171,7 +171,7 @@ namespace DVLD_Presentation.Tests.Controls
             this.lblDrivingClass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.lblDrivingClass.Location = new System.Drawing.Point(380, 396);
             this.lblDrivingClass.Name = "lblDrivingClass";
-            this.lblDrivingClass.Size = new System.Drawing.Size(99, 30);
+            this.lblDrivingClass.Size = new System.Drawing.Size(70, 20);
             this.lblDrivingClass.TabIndex = 208;
             this.lblDrivingClass.Text = "[???????]";
             // 
@@ -195,7 +195,7 @@ namespace DVLD_Presentation.Tests.Controls
             this.lblLocalDrivingLicenseAppID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.lblLocalDrivingLicenseAppID.Location = new System.Drawing.Point(380, 336);
             this.lblLocalDrivingLicenseAppID.Name = "lblLocalDrivingLicenseAppID";
-            this.lblLocalDrivingLicenseAppID.Size = new System.Drawing.Size(49, 30);
+            this.lblLocalDrivingLicenseAppID.Size = new System.Drawing.Size(35, 20);
             this.lblLocalDrivingLicenseAppID.TabIndex = 205;
             this.lblLocalDrivingLicenseAppID.Text = "[??]";
             // 
@@ -219,7 +219,7 @@ namespace DVLD_Presentation.Tests.Controls
             this.lblFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.lblFullName.Location = new System.Drawing.Point(380, 456);
             this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(99, 30);
+            this.lblFullName.Size = new System.Drawing.Size(70, 20);
             this.lblFullName.TabIndex = 202;
             this.lblFullName.Text = "[???????]";
             // 
@@ -243,7 +243,7 @@ namespace DVLD_Presentation.Tests.Controls
             this.lblTrial.ForeColor = System.Drawing.Color.Crimson;
             this.lblTrial.Location = new System.Drawing.Point(380, 516);
             this.lblTrial.Name = "lblTrial";
-            this.lblTrial.Size = new System.Drawing.Size(49, 30);
+            this.lblTrial.Size = new System.Drawing.Size(35, 20);
             this.lblTrial.TabIndex = 199;
             this.lblTrial.Text = "[??]";
             // 
@@ -267,7 +267,7 @@ namespace DVLD_Presentation.Tests.Controls
             this.lblFees.ForeColor = System.Drawing.Color.ForestGreen;
             this.lblFees.Location = new System.Drawing.Point(380, 636);
             this.lblFees.Name = "lblFees";
-            this.lblFees.Size = new System.Drawing.Size(74, 32);
+            this.lblFees.Size = new System.Drawing.Size(49, 21);
             this.lblFees.TabIndex = 196;
             this.lblFees.Text = "[$$$]";
             // 
@@ -292,7 +292,7 @@ namespace DVLD_Presentation.Tests.Controls
             this.dtpTestDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpTestDate.Location = new System.Drawing.Point(385, 570);
             this.dtpTestDate.Name = "dtpTestDate";
-            this.dtpTestDate.Size = new System.Drawing.Size(220, 37);
+            this.dtpTestDate.Size = new System.Drawing.Size(220, 27);
             this.dtpTestDate.TabIndex = 193;
             // 
             // label1
@@ -342,7 +342,7 @@ namespace DVLD_Presentation.Tests.Controls
             // 
             // crlScheduleTest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btnSave);
@@ -364,7 +364,7 @@ namespace DVLD_Presentation.Tests.Controls
             this.Controls.Add(this.pbTestTypeImage);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Name = "crlScheduleTest";
-            this.Size = new System.Drawing.Size(850, 962);
+            this.Size = new System.Drawing.Size(830, 974);
             this.Load += new System.EventHandler(this.crlScheduleTest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbTestTypeImage)).EndInit();
             this.gbRetakeTestInfo.ResumeLayout(false);
