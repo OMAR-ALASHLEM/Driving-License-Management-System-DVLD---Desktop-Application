@@ -1,4 +1,5 @@
 ﻿using DVLD_Business;
+using DVLD_Presentation.Licenses.Local_License;
 using DVLD_Presentation.Tests;
 using System;
 using System.Collections.Generic;
@@ -256,7 +257,7 @@ namespace DVLD_Presentation.Applications.Local_Driving_License
             int LocalDrivingLicenseApplicationID = (int)dvgListLocalDrivangApplication.CurrentRow.Cells[0].Value;
             frmListTestAppointments frm = new frmListTestAppointments(LocalDrivingLicenseApplicationID, TestType);
             frm.ShowDialog();
-            //refresh
+          
             frmListLocalDrivingLicesnseApplications_Load(null, null);
 
         }
@@ -274,6 +275,13 @@ namespace DVLD_Presentation.Applications.Local_Driving_License
         private void scheduleStreetTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _ScheduleTest(clsTestTypes.enTestType.StreetTest);
+        }
+
+        private void issueDrivingLicenseFirstTimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmIssueDriverLicenseFirstTime frm = new frmIssueDriverLicenseFirstTime((int)dvgListLocalDrivangApplication.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+            frmListLocalDrivingLicesnseApplications_Load(null, null);
         }
     }
 }

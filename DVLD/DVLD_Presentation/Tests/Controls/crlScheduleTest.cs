@@ -41,7 +41,7 @@ namespace DVLD_Presentation.Tests.Controls
             {
                 _TestTypeID = value;
 
-                switch (_TestTypeID)
+                switch (_TestTypeID) 
                 {
 
                     case clsTestTypes.enTestType.VisionTest:

@@ -143,5 +143,58 @@ namespace DVLD_Business
         public bool DoesAttendTestType(clsTestTypes.enTestType TestTypeID) => clsLocalDrivingLicenseApplicationData.DoesAttendTestType(this.LocalDrivingLicenseApplicationID, (int)TestTypeID);
         public bool DoesPassTestType(clsTestTypes.enTestType TestTypeID) => clsLocalDrivingLicenseApplicationData.DoesPassTestType(this.LocalDrivingLicenseApplicationID, (int)TestTypeID);
         public bool IsLicenseIssued() => (GetActiveLicenseID() != -1);
+        public bool PassedAllTests() => clsTest.PassedAllTests(this.LocalDrivingLicenseApplicationID);
+        public static bool PassedAllTests(int LocalDrivingLicenseApplicationID) => clsTest.PassedAllTests(LocalDrivingLicenseApplicationID);
+
+        public int IssueLicenseForTheFirtTime(string Notes, int CreatedByUserID)
+        {
+            int DriverID = -1;
+
+            clsDriver Driver = clsDriver.FindByPersonID(this.ApplicantPersonID);
+
+            if (Driver == null)
+            {
+              
+                Driver = new clsDriver();
+
+                Driver.Person_ID = this.ApplicantPersonID;
+                Driver.CreatedByUserID = CreatedByUserID;
+                if (Driver.Save())
+                {
+                    DriverID = Driver.DriverID;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            else
+            {
+                DriverID = Driver.DriverID;
+            }
+       
+
+            clsLicenses License = new clsLicenses();
+            License.ApplicationID = this.ApplicationID;
+            License.DriverID = DriverID;
+            License.LicenseClass = this.LicenseClassID;
+            License.IssueDate = DateTime.Now;
+            License.ExpirationDate = DateTime.Now.AddYears(this.LicenseClassInfo.DefaultValidityLength);
+            License.Notes = Notes;
+            License.PaidFees = this.LicenseClassInfo.ClassFees;
+            License.IsActive = true;
+            License.IssueReason = clsLicenses.enIssueReason.FirstTime;
+            License.CreatedByUserID = CreatedByUserID;
+
+            if (License.Save())
+            { 
+                this.SetComplete();
+
+                return License.LicenseID;
+            }
+
+            else
+                return -1;
+        }
     }
 }

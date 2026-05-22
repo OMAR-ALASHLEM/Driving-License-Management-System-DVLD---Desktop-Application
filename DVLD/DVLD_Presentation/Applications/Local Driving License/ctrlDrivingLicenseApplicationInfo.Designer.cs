@@ -70,6 +70,7 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Driving License Application Info";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // llShowLicenceInfo
             // 
@@ -190,7 +191,7 @@
             // 
             this.ctrlApplicationBasicInfo1.BackColor = System.Drawing.Color.White;
             this.ctrlApplicationBasicInfo1.Location = new System.Drawing.Point(2, 140);
-            this.ctrlApplicationBasicInfo1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ctrlApplicationBasicInfo1.Margin = new System.Windows.Forms.Padding(1);
             this.ctrlApplicationBasicInfo1.Name = "ctrlApplicationBasicInfo1";
             this.ctrlApplicationBasicInfo1.Size = new System.Drawing.Size(684, 272);
             this.ctrlApplicationBasicInfo1.TabIndex = 3;

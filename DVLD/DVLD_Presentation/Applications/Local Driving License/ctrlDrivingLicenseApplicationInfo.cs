@@ -15,7 +15,7 @@ namespace DVLD_Presentation.Applications.Local_Driving_License
 
     public partial class ctrlDrivingLicenseApplicationInfo : UserControl
     {
-
+     public   event Action <bool>HandleShowLicenseInfoClick;
         private clsLocalDrivingLicenseApplication _LocalDrivingLicenseApplication;
 
         private int _LocalDrivingLicenseApplicationID = -1;
@@ -43,9 +43,9 @@ namespace DVLD_Presentation.Applications.Local_Driving_License
             if (_LocalDrivingLicenseApplication == null)
             {
                 _ResetLocalDrivingLicenseApplicationInfo();
-                
 
                 MessageBox.Show("No Application with ApplicationID = " + LocalDrivingLicenseApplicationID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HandleShowLicenseInfoClick?.Invoke(false);
                 return;
             }
               
@@ -89,6 +89,11 @@ namespace DVLD_Presentation.Applications.Local_Driving_License
             lblLocalDrivingLicenseApplicationID.Text = "[????]";
             lblAppliedFor.Text = "[????]";
 
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
         }
     }
