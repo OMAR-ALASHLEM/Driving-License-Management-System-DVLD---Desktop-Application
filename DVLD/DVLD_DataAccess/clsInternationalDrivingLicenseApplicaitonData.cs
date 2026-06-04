@@ -9,7 +9,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace DVLD_DataAccess
 {
-    public class clsInternationalDrivingLicenseApplicaiton
+    public class clsInternationalDrivingLicenseApplicaitonData
     {
 
         public static bool GetInternationalDrivingLicenseApplicaitonInfoByID(int InternationalLicenseID, ref int ApplicationID, ref int DriverID, ref int IssuedUsingLocalLicenseID
@@ -339,6 +339,49 @@ namespace DVLD_DataAccess
 
             return dt;
 
+        }
+
+        public static int GetActiveInternationalLicenseIDByDriverID(int DriverID)
+        {
+            int InternationalLicenseID = -1;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"  
+                            SELECT Top 1 InternationalLicenseID
+                            FROM InternationalLicenses 
+                            where DriverID=@DriverID and GetDate() between IssueDate and ExpirationDate 
+                            order by ExpirationDate Desc;";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@DriverID", DriverID);
+
+            try
+            {
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+
+                if (result != null && int.TryParse(result.ToString(), out int insertedID))
+                {
+                    InternationalLicenseID = insertedID;
+                }
+            }
+
+            catch 
+            {
+            
+
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+
+
+            return InternationalLicenseID;
         }
 
     }
