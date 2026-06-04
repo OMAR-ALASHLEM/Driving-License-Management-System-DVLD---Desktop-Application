@@ -1,4 +1,5 @@
 ﻿using DVLD_Business;
+using DVLD_Presentation.Licenses.Local_License;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,6 +40,7 @@ namespace DVLD_Presentation.Applications.Local_Driving_License
 
          public void LoadApplicationInfoByLocalDrivingAppID(int LocalDrivingLicenseApplicationID)
         {
+            _LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplicationID;   
             _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(LocalDrivingLicenseApplicationID);
             if (_LocalDrivingLicenseApplication == null)
             {
@@ -95,6 +97,26 @@ namespace DVLD_Presentation.Applications.Local_Driving_License
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void llShowLicenceInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+         
+
+            int LicenseID = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(
+               LocalDrivingLicenseApplicationID).GetActiveLicenseID();
+
+            if (LicenseID != -1)
+            {
+                frmShowLicenseInfo frm = new frmShowLicenseInfo(LicenseID);
+                frm.ShowDialog();
+
+            }
+            else
+            {
+                MessageBox.Show("No License Found!", "No License", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
     }
 }
