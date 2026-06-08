@@ -192,5 +192,11 @@ namespace DVLD_Presentation.Applications.International_Licenses
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+
+        private void btnAddNewApplication_Click(object sender, EventArgs e)
+        {
+            frmNewInternationalLicenseApplication frm =new frmNewInternationalLicenseApplication();
+            frm.ShowDialog();
+        }
     }
 }

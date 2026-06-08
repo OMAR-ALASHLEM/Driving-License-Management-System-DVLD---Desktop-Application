@@ -11,17 +11,12 @@ namespace DVLD_Business
 {
     public class clsInternationalDrivingLicenseApplicaiton : clsApplication
     {
-        public new enum enMode { AddNew = 0, Update = 1 };
-        public new enMode Mode = enMode.AddNew;
+        public  enum enMode { AddNew = 0, Update = 1 };
+        public  enMode Mode = enMode.AddNew;
 
-        private int _InternationalLicenseID;
-        private int _ApplicationID;
+
         private int _DriverID;
-        private int _IssuedUsingLocalLicenseID;
-        private DateTime _IssueDate;
-        private DateTime _ExpirationDate;
-        private bool _IsActive;
-        private int _CreatedByUserID;
+
         private clsDriver _Driver;
         private int _Person_ID;
         public int Driver_ID
@@ -45,12 +40,12 @@ namespace DVLD_Business
             set { _Driver = value; }
         }
         public int InternationalLicenseID { get; set; }
-        public int ApplicationID { get; set; }
+        public new int  ApplicationID { get; set; }
         public int IssuedUsingLocalLicenseID { get; set; }
         public DateTime IssueDate { get; set; }
         public DateTime ExpirationDate { get; set; }
         public bool IsActive { get; set; }
-        public new int CreatedByUserID { get; set; }
+        public  int CreatedByUserID { get; set; }
         private clsInternationalDrivingLicenseApplicaiton(int ApplicationID, int ApplicantPersonID,
             DateTime ApplicationDate,
              enApplicationStatus ApplicationStatus, DateTime LastStatusDate,
@@ -95,7 +90,7 @@ namespace DVLD_Business
         {
 
             this.InternationalLicenseID =
-                clsInternationalDrivingLicenseApplicaitonData.AddNewInternationalDrivingLicenseApplicaiton(this.ApplicationID, this._DriverID, this.IssuedUsingLocalLicenseID,
+                clsInternationalDrivingLicenseApplicaitonData.AddNewInternationalLicense(this.ApplicationID, this.Driver_ID, this.IssuedUsingLocalLicenseID,
                this.IssueDate, this.ExpirationDate,
                this.IsActive, this.CreatedByUserID);
 
@@ -108,7 +103,7 @@ namespace DVLD_Business
                this.IssueDate, this.ExpirationDate,
                this.IsActive, this.CreatedByUserID);
 
-        public static clsInternationalDrivingLicenseApplicaiton Find(int InternationalLicenseID)
+        public static  clsInternationalDrivingLicenseApplicaiton Find(int InternationalLicenseID)
         {
             int ApplicationID = -1;
             int DriverID = -1; int IssuedUsingLocalLicenseID = -1;
@@ -119,7 +114,7 @@ namespace DVLD_Business
                 ref IssuedUsingLocalLicenseID,
             ref IssueDate, ref ExpirationDate, ref IsActive, ref CreatedByUserID))
             {
-             
+
                 clsApplication Application = clsApplication.Find(ApplicationID);
 
 
@@ -140,10 +135,10 @@ namespace DVLD_Business
 
         public static DataTable GetAllInternationalLicenses() => clsInternationalDrivingLicenseApplicaitonData.GetAllInternationalDrivingLicenseApplicaiton();
 
-        public bool Save()
+        public  bool Save()
         {
 
-          
+
             base.Mode = (clsApplication.enMode)Mode;
             if (!base.Save())
                 return false;
