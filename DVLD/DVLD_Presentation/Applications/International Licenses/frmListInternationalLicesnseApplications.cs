@@ -1,5 +1,6 @@
 ﻿using DVLD_Business;
 using DVLD_Presentation.Licenses;
+using DVLD_Presentation.Licenses.International_Licenses;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -196,6 +197,13 @@ namespace DVLD_Presentation.Applications.International_Licenses
         private void btnAddNewApplication_Click(object sender, EventArgs e)
         {
             frmNewInternationalLicenseApplication frm =new frmNewInternationalLicenseApplication();
+            frm.ShowDialog();
+        }
+
+        private void showLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+             int InternationalLicenseID = (int)dgvInternationalLicenses.CurrentRow.Cells[0].Value;
+            frmShowInternationalLicenseInfo frm = new frmShowInternationalLicenseInfo(InternationalLicenseID);
             frm.ShowDialog();
         }
     }

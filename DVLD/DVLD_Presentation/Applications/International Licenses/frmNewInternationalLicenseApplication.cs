@@ -1,5 +1,6 @@
 ﻿using DVLD_Business;
 using DVLD_Presentation.Licenses;
+using DVLD_Presentation.Licenses.International_Licenses;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,7 +39,9 @@ namespace DVLD_Presentation.Applications.International_Licenses
 
         private void llShowLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            frmShowInternationalLicenseInfo frm =
+            new frmShowInternationalLicenseInfo(_InternationalLicenseID);
+            frm.ShowDialog();
         }
 
         private void llShowLicenseHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
