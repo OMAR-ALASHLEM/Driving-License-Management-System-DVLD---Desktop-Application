@@ -37,25 +37,25 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpLocalLicenses = new System.Windows.Forms.TabPage();
-            this.tbInternationalLicenses = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dgvLocalLicensesHistory = new System.Windows.Forms.DataGridView();
-            this.dgvInternationalLicensesHistory = new System.Windows.Forms.DataGridView();
-            this.lbInternationalLicensesRecords = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblLocalLicensesRecords = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.dgvLocalLicensesHistory = new System.Windows.Forms.DataGridView();
             this.cmsLocalLicenseHistory = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showLicenseInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbInternationalLicenses = new System.Windows.Forms.TabPage();
+            this.lbInternationalLicensesRecords = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dgvInternationalLicensesHistory = new System.Windows.Forms.DataGridView();
             this.cmsInterenationalLicenseHistory = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.InternationalLicenseHistorytoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tpLocalLicenses.SuspendLayout();
-            this.tbInternationalLicenses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalLicensesHistory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInternationalLicensesHistory)).BeginInit();
             this.cmsLocalLicenseHistory.SuspendLayout();
+            this.tbInternationalLicenses.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInternationalLicensesHistory)).BeginInit();
             this.cmsInterenationalLicenseHistory.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,40 +85,27 @@
             this.tpLocalLicenses.Text = "Local";
             this.tpLocalLicenses.UseVisualStyleBackColor = true;
             // 
-            // tbInternationalLicenses
+            // lblLocalLicensesRecords
             // 
-            this.tbInternationalLicenses.Controls.Add(this.lbInternationalLicensesRecords);
-            this.tbInternationalLicenses.Controls.Add(this.label2);
-            this.tbInternationalLicenses.Controls.Add(this.dgvInternationalLicensesHistory);
-            this.tbInternationalLicenses.Controls.Add(this.label3);
-            this.tbInternationalLicenses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.tbInternationalLicenses.Location = new System.Drawing.Point(4, 30);
-            this.tbInternationalLicenses.Name = "tbInternationalLicenses";
-            this.tbInternationalLicenses.Padding = new System.Windows.Forms.Padding(3);
-            this.tbInternationalLicenses.Size = new System.Drawing.Size(1082, 363);
-            this.tbInternationalLicenses.TabIndex = 1;
-            this.tbInternationalLicenses.Text = "International";
-            this.tbInternationalLicenses.UseVisualStyleBackColor = true;
+            this.lblLocalLicensesRecords.AutoSize = true;
+            this.lblLocalLicensesRecords.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocalLicensesRecords.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.lblLocalLicensesRecords.Location = new System.Drawing.Point(107, 313);
+            this.lblLocalLicensesRecords.Name = "lblLocalLicensesRecords";
+            this.lblLocalLicensesRecords.Size = new System.Drawing.Size(22, 25);
+            this.lblLocalLicensesRecords.TabIndex = 139;
+            this.lblLocalLicensesRecords.Text = "0";
             // 
-            // label1
+            // label5
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 20);
-            this.label1.TabIndex = 136;
-            this.label1.Text = "Local Licenses History:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 14);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(253, 20);
-            this.label3.TabIndex = 140;
-            this.label3.Text = "International Licenses History:";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.label5.Location = new System.Drawing.Point(6, 313);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 25);
+            this.label5.TabIndex = 138;
+            this.label5.Text = "#Records:";
             // 
             // dgvLocalLicensesHistory
             // 
@@ -165,6 +152,72 @@
             this.dgvLocalLicensesHistory.Size = new System.Drawing.Size(1070, 237);
             this.dgvLocalLicensesHistory.TabIndex = 137;
             // 
+            // cmsLocalLicenseHistory
+            // 
+            this.cmsLocalLicenseHistory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showLicenseInfoToolStripMenuItem});
+            this.cmsLocalLicenseHistory.Name = "cmsLocalLicenseHistory";
+            this.cmsLocalLicenseHistory.Size = new System.Drawing.Size(211, 42);
+            // 
+            // showLicenseInfoToolStripMenuItem
+            // 
+            this.showLicenseInfoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.showLicenseInfoToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.showLicenseInfoToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.License_View_32;
+            this.showLicenseInfoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.showLicenseInfoToolStripMenuItem.Name = "showLicenseInfoToolStripMenuItem";
+            this.showLicenseInfoToolStripMenuItem.Size = new System.Drawing.Size(210, 38);
+            this.showLicenseInfoToolStripMenuItem.Text = "Show License Info";
+            this.showLicenseInfoToolStripMenuItem.Click += new System.EventHandler(this.showLicenseInfoToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(194, 20);
+            this.label1.TabIndex = 136;
+            this.label1.Text = "Local Licenses History:";
+            // 
+            // tbInternationalLicenses
+            // 
+            this.tbInternationalLicenses.Controls.Add(this.lbInternationalLicensesRecords);
+            this.tbInternationalLicenses.Controls.Add(this.label2);
+            this.tbInternationalLicenses.Controls.Add(this.dgvInternationalLicensesHistory);
+            this.tbInternationalLicenses.Controls.Add(this.label3);
+            this.tbInternationalLicenses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.tbInternationalLicenses.Location = new System.Drawing.Point(4, 30);
+            this.tbInternationalLicenses.Name = "tbInternationalLicenses";
+            this.tbInternationalLicenses.Padding = new System.Windows.Forms.Padding(3);
+            this.tbInternationalLicenses.Size = new System.Drawing.Size(1082, 363);
+            this.tbInternationalLicenses.TabIndex = 1;
+            this.tbInternationalLicenses.Text = "International";
+            this.tbInternationalLicenses.UseVisualStyleBackColor = true;
+            this.tbInternationalLicenses.Click += new System.EventHandler(this.tbInternationalLicenses_Click);
+            // 
+            // lbInternationalLicensesRecords
+            // 
+            this.lbInternationalLicensesRecords.AutoSize = true;
+            this.lbInternationalLicensesRecords.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInternationalLicensesRecords.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.lbInternationalLicensesRecords.Location = new System.Drawing.Point(107, 313);
+            this.lbInternationalLicensesRecords.Name = "lbInternationalLicensesRecords";
+            this.lbInternationalLicensesRecords.Size = new System.Drawing.Size(22, 25);
+            this.lbInternationalLicensesRecords.TabIndex = 143;
+            this.lbInternationalLicensesRecords.Text = "0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.label2.Location = new System.Drawing.Point(6, 313);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 25);
+            this.label2.TabIndex = 142;
+            this.label2.Text = "#Records:";
+            // 
             // dgvInternationalLicensesHistory
             // 
             this.dgvInternationalLicensesHistory.AllowUserToAddRows = false;
@@ -210,75 +263,13 @@
             this.dgvInternationalLicensesHistory.Size = new System.Drawing.Size(1070, 237);
             this.dgvInternationalLicensesHistory.TabIndex = 141;
             // 
-            // lbInternationalLicensesRecords
-            // 
-            this.lbInternationalLicensesRecords.AutoSize = true;
-            this.lbInternationalLicensesRecords.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbInternationalLicensesRecords.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.lbInternationalLicensesRecords.Location = new System.Drawing.Point(107, 313);
-            this.lbInternationalLicensesRecords.Name = "lbInternationalLicensesRecords";
-            this.lbInternationalLicensesRecords.Size = new System.Drawing.Size(22, 25);
-            this.lbInternationalLicensesRecords.TabIndex = 143;
-            this.lbInternationalLicensesRecords.Text = "0";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.label2.Location = new System.Drawing.Point(6, 313);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 25);
-            this.label2.TabIndex = 142;
-            this.label2.Text = "#Records:";
-            // 
-            // lblLocalLicensesRecords
-            // 
-            this.lblLocalLicensesRecords.AutoSize = true;
-            this.lblLocalLicensesRecords.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocalLicensesRecords.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.lblLocalLicensesRecords.Location = new System.Drawing.Point(107, 313);
-            this.lblLocalLicensesRecords.Name = "lblLocalLicensesRecords";
-            this.lblLocalLicensesRecords.Size = new System.Drawing.Size(22, 25);
-            this.lblLocalLicensesRecords.TabIndex = 139;
-            this.lblLocalLicensesRecords.Text = "0";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.label5.Location = new System.Drawing.Point(6, 313);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 25);
-            this.label5.TabIndex = 138;
-            this.label5.Text = "#Records:";
-            // 
-            // cmsLocalLicenseHistory
-            // 
-            this.cmsLocalLicenseHistory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showLicenseInfoToolStripMenuItem});
-            this.cmsLocalLicenseHistory.Name = "cmsLocalLicenseHistory";
-            this.cmsLocalLicenseHistory.Size = new System.Drawing.Size(211, 42);
-            // 
-            // showLicenseInfoToolStripMenuItem
-            // 
-            this.showLicenseInfoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.showLicenseInfoToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.showLicenseInfoToolStripMenuItem.Image = global::DVLD_Presentation.Properties.Resources.License_View_32;
-            this.showLicenseInfoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.showLicenseInfoToolStripMenuItem.Name = "showLicenseInfoToolStripMenuItem";
-            this.showLicenseInfoToolStripMenuItem.Size = new System.Drawing.Size(210, 38);
-            this.showLicenseInfoToolStripMenuItem.Text = "Show License Info";
-            this.showLicenseInfoToolStripMenuItem.Click += new System.EventHandler(this.showLicenseInfoToolStripMenuItem_Click);
-            // 
             // cmsInterenationalLicenseHistory
             // 
             this.cmsInterenationalLicenseHistory.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.cmsInterenationalLicenseHistory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.InternationalLicenseHistorytoolStripMenuItem});
             this.cmsInterenationalLicenseHistory.Name = "cmsLocalLicenseHistory";
-            this.cmsInterenationalLicenseHistory.Size = new System.Drawing.Size(213, 64);
+            this.cmsInterenationalLicenseHistory.Size = new System.Drawing.Size(213, 42);
             // 
             // InternationalLicenseHistorytoolStripMenuItem
             // 
@@ -289,6 +280,16 @@
             this.InternationalLicenseHistorytoolStripMenuItem.Size = new System.Drawing.Size(212, 38);
             this.InternationalLicenseHistorytoolStripMenuItem.Text = "Show License Info";
             this.InternationalLicenseHistorytoolStripMenuItem.Click += new System.EventHandler(this.InternationalLicenseHistorytoolStripMenuItem_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(253, 20);
+            this.label3.TabIndex = 140;
+            this.label3.Text = "International Licenses History:";
             // 
             // ctrlDriverLicenses
             // 
@@ -302,11 +303,11 @@
             this.tabControl1.ResumeLayout(false);
             this.tpLocalLicenses.ResumeLayout(false);
             this.tpLocalLicenses.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLocalLicensesHistory)).EndInit();
+            this.cmsLocalLicenseHistory.ResumeLayout(false);
             this.tbInternationalLicenses.ResumeLayout(false);
             this.tbInternationalLicenses.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLocalLicensesHistory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInternationalLicensesHistory)).EndInit();
-            this.cmsLocalLicenseHistory.ResumeLayout(false);
             this.cmsInterenationalLicenseHistory.ResumeLayout(false);
             this.ResumeLayout(false);
 

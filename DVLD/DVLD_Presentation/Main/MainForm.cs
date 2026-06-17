@@ -1,5 +1,6 @@
 ﻿using DVLD_Business;
 using DVLD_Presentation.Applications.Application_Types;
+using DVLD_Presentation.Applications.International_Licenses;
 using DVLD_Presentation.Applications.Local_Driving_License;
 using DVLD_Presentation.Drivers;
 using DVLD_Presentation.Tests.TestTypes;
@@ -99,6 +100,17 @@ namespace DVLD_Presentation
         {
             frmListDrivers frm = new frmListDrivers();
             frm.ShowDialog();
+
+        }
+
+        private void internationalLicenseApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListInternationalLicesnseApplications frm = new frmListInternationalLicesnseApplications();
+            frm.ShowDialog();
+        }
+
+        private void internationalLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
         }
     }

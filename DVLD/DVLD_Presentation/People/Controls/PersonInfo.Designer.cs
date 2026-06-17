@@ -288,7 +288,7 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Gender : ";
             // 
-            // PersonInfo
+            // Driver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
