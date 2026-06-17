@@ -261,7 +261,7 @@ namespace DVLD_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
             string query = @"UPDATE Licenses 
-                             SET IsActivae =0 WHERE LicenseID=@LicenseID";
+                             SET IsActive = 0 WHERE LicenseID=@LicenseID";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@LicenseID", LicenseID);
             try

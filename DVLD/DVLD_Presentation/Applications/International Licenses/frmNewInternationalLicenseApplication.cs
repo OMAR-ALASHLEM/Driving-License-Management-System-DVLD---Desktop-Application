@@ -139,5 +139,10 @@ namespace DVLD_Presentation.Applications.International_Licenses
             llShowLicenseInfo.Enabled = true;
 
         }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
