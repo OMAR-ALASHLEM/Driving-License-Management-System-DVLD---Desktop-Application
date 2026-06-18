@@ -117,6 +117,11 @@ namespace DVLD_Presentation.Applications.Renew_Local_License
             lblApplicationFees.Text = clsApplicationType.GetApplicationTypeByID((int)clsApplication.enApplicationType.RenewDrivingLicense).Fees.ToString();
             lblCreatedByUser.Text = clsGlobal.CurrentUser.Username;
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 
