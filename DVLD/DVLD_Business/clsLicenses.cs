@@ -32,7 +32,7 @@ namespace DVLD_Business
         public bool IsActive { get; set; }
         public float PaidFees { get; set; }
         public string Notes { get; set; }
-
+        public clsDetainedLicense DetainedInfo {get { return clsDetainedLicense.FindByLicenseID(this.LicenseID); } }
         public bool IsDetained
         {
             get { return clsDetainedLicense.IsLicenseDetained(this.LicenseID); }
@@ -303,6 +303,31 @@ namespace DVLD_Business
             }
 
             return detainedLicense.DetainID;
+
+        }
+        public bool ReleaseDetainedLicense(int ReleasedByUserID, ref int ApplicationID)
+        {
+
+            clsApplication Application = new clsApplication();
+
+            Application.ApplicantPersonID = this.DriverInfo.Person_ID;
+            Application.ApplicationDate = DateTime.Now;
+            Application.ApplicationTypeID = (int)clsApplication.enApplicationType.ReleaseDetainedDrivingLicsense;
+            Application.ApplicationStatus = clsApplication.enApplicationStatus.Completed;
+            Application.LastStatusDate = DateTime.Now;
+            Application.PaidFees = clsApplicationType.GetApplicationTypeByID((int)clsApplication.enApplicationType.ReleaseDetainedDrivingLicsense).Fees;
+            Application.CreatedByUserID = ReleasedByUserID;
+
+            if (!Application.Save())
+            {
+                ApplicationID = -1;
+                return false;
+            }
+
+            ApplicationID = Application.ApplicationID;
+
+
+            return this.DetainedInfo.ReleaseDetainedLicense(ReleasedByUserID, Application.ApplicationID);
 
         }
     }
