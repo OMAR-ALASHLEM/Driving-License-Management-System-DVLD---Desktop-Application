@@ -137,8 +137,7 @@ namespace DVLD_Presentation.Applications.Rlease_Detained_License
                 if (cbFilterBy.Text == "None")
                 {
                     txtFilterValue.Enabled = false;
-                    //_dtDetainedLicenses.DefaultView.RowFilter = "";
-                    //lblTotalRecords.Text = dgvDetainedLicenses.Rows.Count.ToString();
+           
 
                 }
                 else
