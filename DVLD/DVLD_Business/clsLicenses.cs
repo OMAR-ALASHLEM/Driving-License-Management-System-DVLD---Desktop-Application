@@ -33,6 +33,11 @@ namespace DVLD_Business
         public float PaidFees { get; set; }
         public string Notes { get; set; }
 
+        public bool IsDetained
+        {
+            get { return clsDetainedLicense.IsLicenseDetained(this.LicenseID); }
+        }
+
         private clsLicenseClass _LicenseClassInfo;
 
         public clsLicenseClass LicenseClassInfo
@@ -283,6 +288,22 @@ namespace DVLD_Business
         }
         public bool DeactivateCurrentLicense() => (clsLicensesData.DeactivateLicense(this.LicenseID));
 
+        public int Detain(float FineFees, int CreatedByUserID)
+        {
+            clsDetainedLicense detainedLicense = new clsDetainedLicense();
+            detainedLicense.LicenseID = this.LicenseID;
+            detainedLicense.DetainDate = DateTime.Now;
+            detainedLicense.FineFees = Convert.ToSingle(FineFees);
+            detainedLicense.CreatedByUserID = CreatedByUserID;
 
+            if (!detainedLicense.Save())
+            {
+
+                return -1;
+            }
+
+            return detainedLicense.DetainID;
+
+        }
     }
 }
