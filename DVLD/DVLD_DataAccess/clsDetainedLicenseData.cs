@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DVLD_DataAccess
 {
-    public class clsDetainedLicense
+    public class clsDetainedLicenseData
     {
         public static bool GetDetainedLicenseInfoByID(int DetainID, ref int LicenseID, ref DateTime DetainDate,
          ref float FineFees, ref int CreatedByUserID, ref bool IsReleased, ref DateTime ReleaseDate,
@@ -199,7 +199,7 @@ namespace DVLD_DataAccess
 
         }
 
-        public static bool ReleaseDetainedLicense(int DetainID, DateTime ReleaseDate, int ReleasedByUserID, int ReleaseApplicationID)
+        public static bool ReleaseDetainedLicense(int DetainID, int ReleasedByUserID, int ReleaseApplicationID)
         {
             bool isUpdated = false;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
@@ -210,7 +210,7 @@ namespace DVLD_DataAccess
                WHERE DetainID = @DetainID";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@DetainID", DetainID);
-            command.Parameters.AddWithValue("@ReleaseDate", ReleaseDate);
+            command.Parameters.AddWithValue("@ReleaseDate", DateTime.Now);
             command.Parameters.AddWithValue("@ReleasedByUserID", ReleasedByUserID);
             command.Parameters.AddWithValue("@ReleaseApplicationID", ReleaseApplicationID);
             try
@@ -269,7 +269,50 @@ namespace DVLD_DataAccess
             return newDetainID;
         }
 
-        public static bool IsLicenseCurrentlyDetained(int LicenseID, ref int DetainID)
+        public static bool UpdateDetainedLicense(int DetainID,
+          int LicenseID, DateTime DetainDate,
+          float FineFees, int CreatedByUserID)
+        {
+
+            int rowsAffected = 0;
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"UPDATE DetainedLicenses
+                              SET LicenseID = @LicenseID, 
+                              DetainDate = @DetainDate, 
+                              FineFees = @FineFees,
+                              CreatedByUserID = @CreatedByUserID,   
+                              WHERE DetainID=@DetainID;";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@DetainedLicenseID", DetainID);
+            command.Parameters.AddWithValue("@LicenseID", LicenseID);
+            command.Parameters.AddWithValue("@DetainDate", DetainDate);
+            command.Parameters.AddWithValue("@FineFees", FineFees);
+            command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
+
+
+            try
+            {
+                connection.Open();
+                rowsAffected = command.ExecuteNonQuery();
+
+            }
+            catch
+            {
+               
+                return false;
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+
+            return (rowsAffected > 0);
+        }
+        public static bool IsLicenseCurrentlyDetained(int LicenseID)
         {
             bool isDetained = false;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
@@ -282,7 +325,6 @@ namespace DVLD_DataAccess
                 object result = command.ExecuteScalar();
                 if (result != null)
                 {
-                    DetainID = Convert.ToInt32(result);
                     isDetained = true;
                 }
                 else
@@ -301,6 +343,6 @@ namespace DVLD_DataAccess
             return isDetained;
         }
 
-     
+
     }
 }
